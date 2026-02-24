@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni | JNU Placement Cell</title>
+    <!-- Local Assets -->
+    <link href="assets/css/output.css" rel="stylesheet">
+    <link href="assets/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/css/google-fonts.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <style>
+        /* Responsive improvements for smooth transitions */
+        @media (max-width: 1024px) {
+
+            /* Tablet landscape - force single column for complex layouts */
+            .grid.lg\:grid-cols-2,
+            .grid.lg\:grid-cols-3 {
+                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Tablet portrait and below - mobile view */
+            /* Ensure all grids become single column */
+            .grid {
+                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+            }
+
+            /* Hide desktop navigation, show mobile */
+            .hidden.md\:flex {
+                display: none !important;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1023px) {
+
+            /* Tablet-specific adjustments */
+            .max-w-7xl {
+                max-width: 90%;
+            }
+
+            /* Force 2-column max for grids on tablets */
+            .grid.md\:grid-cols-2.lg\:grid-cols-3 {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+
+            /* Mobile - ensure everything stacks */
+            h1,
+            h2,
+            h3 {
+                font-size: 90% !important;
+            }
+
+            .text-3xl {
+                font-size: 1.5rem !important;
+            }
+
+            .text-4xl {
+                font-size: 1.75rem !important;
+            }
+        }
+
+        /* Navigation responsive fixes */
+        @media (max-width: 1100px) {
+
+            /* Hide desktop menu earlier to prevent text wrapping/breaking */
+            .hidden.md\:flex {
+                display: none !important;
+            }
+
+            .flex.items-center.md\:hidden {
+                display: flex !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans antialiased text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="flex items-center gap-3">
+                        <div><img src="assets/logos/jnulogo2.png" alt="JNU logo" class="h-12 w-12 object-contain"></div>
+                        <div class="border-l-2 border-gray-300 pl-3">
+                            <h1 class="text-lg font-serif font-bold text-jnuBlue leading-none">Jawaharlal Nehru
+                                university</h1>
+                            <p class="text-sm font-bold text-jnuRed tracking-widest uppercase mt-1">Placement Cell
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-4 px-4">
+                    <a href="index.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">HOME</a>
+                    <a href="About_Us.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">ABOUT
+                        US</a>
+                    <a href="For_Recruiters.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">FOR
+                        RECRUITERS</a>
+                    <a href="students.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">FOR
+                        STUDENTS</a>
+                    <a href="Campus_Life.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">CAMPUS
+                        LIFE</a>
+                    <a href="team.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">OUR
+                        TEAM</a>
+                    <a href="Our_Alumni.html"
+                        class="text-jnuBlue font-bold text-sm uppercase border-b-2 border-jnuRed whitespace-nowrap">OUR
+                        ALUMNI</a>
+                    <a href="Contact_Us.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">CONTACT
+                        US</a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleMobileMenu()"
+                        class="text-gray-600 hover:text-jnuBlue p-2 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu"
+            class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl z-40 left-0">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="index.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">HOME</a>
+                <a href="About_Us.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">ABOUT
+                    US</a>
+                <a href="For_Recruiters.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">FOR
+                    RECRUITERS</a>
+                <a href="students.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">FOR
+                    STUDENTS</a>
+                <a href="Campus_Life.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">CAMPUS
+                    LIFE</a>
+                <a href="team.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">OUR
+                    TEAM</a>
+                <a href="Our_Alumni.html" class="block py-2 text-sm font-bold text-jnuBlue">OUR ALUMNI</a>
+                <a href="Contact_Us.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">CONTACT
+                    US</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+
+        <!-- Header (Compact) -->
+        <div class="bg-white border-b border-gray-200 py-10">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-jnuRed font-bold tracking-widest uppercase text-xs mb-3">Our Pride</h2>
+                <h1 class="text-3xl md:text-4xl font-serif font-bold text-jnuBlue mb-4">Distinguished Alumni</h1>
+                <p class="text-gray-500 max-w-3xl mx-auto text-base font-light leading-relaxed">
+                    JNU notable Alumni placed as top government officials, corporate giants and academicians are a
+                    measure of our success. Jawaharlal Nehru University Placement Cell takes immense pride in its alumni
+                    and welcomes them to mentor, guide and and share their experience with our students.
+                </p>
+            </div>
+        </div>
+
+        <!-- Distinguished Alumni Grid -->
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+
+                    <!-- Card 1: Dr. Subrahmanyam Jaishankar -->
+                    <div
+                        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-row items-stretch border border-gray-100">
+                        <div class="w-24 sm:w-32 md:w-1/4 flex-shrink-0 relative">
+                            <img src="assets/Alumni/jaishankar.webp" alt="Dr. Subrahmanyam Jaishankar"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="flex-grow p-3 sm:p-5 flex flex-col justify-center">
+                            <h3 class="text-base sm:text-xl font-bold text-jnuBlue mb-0.5 leading-tight">Dr.
+                                Subrahmanyam Jaishankar</h3>
+                            <p
+                                class="text-jnuRed font-medium text-[9px] sm:text-[11px] uppercase tracking-wide mb-1 sm:mb-2 leading-tight">
+                                M.A. in Political Science, School of Social Sciences (SSS); M.Phil. and PhD in
+                                International Relations, School of International Studies (SIS)</p>
+                            <p
+                                class="text-gray-600 text-[11px] sm:text-[13px] leading-snug sm:leading-relaxed text-justify">
+                                Holding a doctorate from JNU, he is the External Affairs Minister of India. He was
+                                Foreign Secretary from 2015-18, Ambassador to the United States from 2013-15, Ambassador
+                                to China from 2009-2013, High Commissioner to Singapore from 2007-2009 and Ambassador to
+                                the Czech Republic from 2000-2004. He did his M.Phil and Ph.D from JNU.
+                            </p>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Card 3: Ms. Nirmala Sitharaman -->
+                    <div
+                        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-row items-stretch border border-gray-100">
+                        <div class="w-24 sm:w-32 md:w-1/4 flex-shrink-0 relative">
+                            <img src="assets/Alumni/nirmala_sitharaman.jpg" alt="Ms. Nirmala Sitharaman"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="flex-grow p-3 sm:p-5 flex flex-col justify-center">
+                            <h3 class="text-base sm:text-xl font-bold text-jnuBlue mb-0.5 leading-tight">Ms. Nirmala
+                                Sitharaman</h3>
+                            <p
+                                class="text-jnuRed font-medium text-[9px] sm:text-[11px] uppercase tracking-wide mb-1 sm:mb-2 leading-tight">
+                                M.A. and M.Phil. in Economics, School of Social Sciences (SSS)</p>
+                            <p
+                                class="text-gray-600 text-[11px] sm:text-[13px] leading-snug sm:leading-relaxed text-justify">
+                                A postgraduate from JNU,she is the Union Finance Minister and former Defence Minister of
+                                India. She formerly served as the Defence Minister of India, thereby becoming India's
+                                second female defence minister and also the second female finance minister after Indira
+                                Gandhi and the first full-time female Finance Minister. She served as a member of the
+                                National Commission for Women between 2003-2005.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Dr. Abhijit Banerjee -->
+                    <div
+                        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-row items-stretch border border-gray-100">
+                        <div class="w-24 sm:w-32 md:w-1/4 flex-shrink-0 relative">
+                            <img src="assets/Alumni/abhijit.jpeg" alt="Dr. Abhijit Banerjee"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="flex-grow p-3 sm:p-5 flex flex-col justify-center">
+                            <h3 class="text-base sm:text-xl font-bold text-jnuBlue mb-0.5 leading-tight">Dr. Abhijit
+                                Banerjee</h3>
+                            <p
+                                class="text-jnuRed font-medium text-[9px] sm:text-[11px] uppercase tracking-wide mb-1 sm:mb-2 leading-tight">
+                                M.A. in Economics, School of Social Sciences (SSS)</p>
+                            <p
+                                class="text-gray-600 text-[11px] sm:text-[13px] leading-snug sm:leading-relaxed text-justify">
+                                A postgraduate from JNU, He is the Ford Foundation International Professor of Economics
+                                at MIT. In 2019, he won the Nobel Prize in Economics along with Esther Duflo and Michael
+                                Kremer for their experimental approach to alleviating global poverty. He co-founded
+                                J-PAL and continues to contribute to development economics. Recently, he was appointed
+                                to the Telangana Vision Board (2025) and received honorary degrees from UPenn and ENS
+                                Lyon.
+                            </p>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Card 6: Mr. Amitabh Kant -->
+                    <div
+                        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-row items-stretch border border-gray-100">
+                        <div class="w-24 sm:w-32 md:w-1/4 flex-shrink-0 relative">
+                            <img src="assets/Alumni/amitab-profile-img.png" alt="Mr. Amitabh Kant"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="flex-grow p-3 sm:p-5 flex flex-col justify-center">
+                            <h3 class="text-base sm:text-xl font-bold text-jnuBlue mb-0.5 leading-tight">Mr. Amitabh
+                                Kant</h3>
+                            <p
+                                class="text-jnuRed font-medium text-[9px] sm:text-[11px] uppercase tracking-wide mb-1 sm:mb-2 leading-tight">
+                                M.A. in International Relations, School of International Studies (SIS)</p>
+                            <p
+                                class="text-gray-600 text-[11px] sm:text-[13px] leading-snug sm:leading-relaxed text-justify">
+                                A postgraduate from JNU, he is currently serving as IndiGo director and formerly served
+                                as India's G20 Sherpa and formerly served as the Chief Executive Officer of NITI Aayog.
+                                A member of the Indian Administrative Service (Kerala Cadre), he has played a key role
+                                in flagship initiatives like Make in India, Startup India, Incredible India, and God's
+                                Own Country.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 7: Ms. Anjana Sinha -->
+                    <div
+                        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-row items-stretch border border-gray-100">
+                        <div class="w-24 sm:w-32 md:w-1/4 flex-shrink-0 relative">
+                            <img src="assets/Alumni/anjanasinha.jpg" alt="Ms. Anjana Sinha"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="flex-grow p-3 sm:p-5 flex flex-col justify-center">
+                            <h3 class="text-base sm:text-xl font-bold text-jnuBlue mb-0.5 leading-tight">Ms. Anjana
+                                Sinha</h3>
+                            <p
+                                class="text-jnuRed font-medium text-[9px] sm:text-[11px] uppercase tracking-wide mb-1 sm:mb-2 leading-tight">
+                                M.A. in International Politics, School of International Studies (SIS)</p>
+                            <p
+                                class="text-gray-600 text-[11px] sm:text-[13px] leading-snug sm:leading-relaxed text-justify">
+                                A 1990-batch IPS officer, she has served as the Director of the National
+                                Industrial Security Academy (NISA). With over 20 years of experience, she has served in
+                                strategic advisory roles with the UN in Bosnia-Herzegovina and as a nodal person for
+                                UNODC in anti-human trafficking campaigns.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 8: Dr. Amitabh Rajan -->
+                    <div
+                        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-row items-stretch border border-gray-100">
+                        <div class="w-24 sm:w-32 md:w-1/4 flex-shrink-0 relative">
+                            <img src="assets/Alumni/DrAmitabhRajan.jpg" alt="Dr. Amitabh Rajan"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="flex-grow p-3 sm:p-5 flex flex-col justify-center">
+                            <h3 class="text-base sm:text-xl font-bold text-jnuBlue mb-0.5 leading-tight">Dr. Amitabh
+                                Rajan</h3>
+                            <p
+                                class="text-jnuRed font-medium text-[9px] sm:text-[11px] uppercase tracking-wide mb-1 sm:mb-2 leading-tight">
+                                B.A., M.A. in Modern History, and Ph.D. in Sociological Jurisprudence, School of Social
+                                Sciences (SSS)</p>
+                            <p
+                                class="text-gray-600 text-[11px] sm:text-[13px] leading-snug sm:leading-relaxed text-justify">
+                                A 1979-batch IAS officer, he is the Chairman of the Reserve Bank of India Services
+                                Board. He formerly served as the Home Secretary and Additional Chief Secretary of
+                                Maharashtra. He is an acclaimed author of several books on ethics, human rights, and
+                                administrative power.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 9: Prof. Apurva Sarin -->
+                    <div
+                        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-row items-stretch border border-gray-100">
+                        <div class="w-24 sm:w-32 md:w-1/4 flex-shrink-0 relative">
+                            <img src="assets/Alumni/apurvasarin.jpg" alt="Prof. Apurva Sarin"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="flex-grow p-3 sm:p-5 flex flex-col justify-center">
+                            <h3 class="text-base sm:text-xl font-bold text-jnuBlue mb-0.5 leading-tight">Prof. Apurva
+                                Sarin</h3>
+                            <p
+                                class="text-jnuRed font-medium text-[9px] sm:text-[11px] uppercase tracking-wide mb-1 sm:mb-2 leading-tight">
+                                Ph.D., School of Life Sciences (SLS)</p>
+                            <p
+                                class="text-gray-600 text-[11px] sm:text-[13px] leading-snug sm:leading-relaxed text-justify">
+                                A distinguished cell biologist, she serves as the Director of the Institute for Stem
+                                Cell Science and Regenerative Medicine (inStem). Her research on apoptosis in metazoan
+                                cells earned her the National Bioscience Award for Career Development. She is an elected
+                                fellow of the Indian Academy of Sciences.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 10: Dr. Arvind Gupta -->
+                    <div
+                        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-row items-stretch border border-gray-100">
+                        <div class="w-24 sm:w-32 md:w-1/4 flex-shrink-0 relative">
+                            <img src="assets/Alumni/arvindgupta.jpg" alt="Dr. Arvind Gupta"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="flex-grow p-3 sm:p-5 flex flex-col justify-center">
+                            <h3 class="text-base sm:text-xl font-bold text-jnuBlue mb-0.5 leading-tight">Dr. Arvind
+                                Gupta</h3>
+                            <p
+                                class="text-jnuRed font-medium text-[9px] sm:text-[11px] uppercase tracking-wide mb-1 sm:mb-2 leading-tight">
+                                M.Phil. and Ph.D. from the School of International Studies (SIS)</p>
+                            <p
+                                class="text-gray-600 text-[11px] sm:text-[13px] leading-snug sm:leading-relaxed text-justify">
+                                A former Deputy National Security Advisor of India (2014–2017), he is currently the
+                                Director of the Vivekananda International Foundation (VIF). He previously served as the
+                                Director General of the Institute for Defence Studies and Analyses (IDSA) and held the
+                                Lal Bahadur Shastri Chair on National Security.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 11: Mr. Venu Rajamony -->
+                    <div
+                        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-row items-stretch border border-gray-100">
+                        <div class="w-24 sm:w-32 md:w-1/4 flex-shrink-0 relative">
+                            <img src="assets/Alumni/venurajamony.jpg" alt="Mr. Venu Rajamony"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="flex-grow p-3 sm:p-5 flex flex-col justify-center">
+                            <h3 class="text-base sm:text-xl font-bold text-jnuBlue mb-0.5 leading-tight">Mr. Venu
+                                Rajamony</h3>
+                            <p
+                                class="text-jnuRed font-medium text-[9px] sm:text-[11px] uppercase tracking-wide mb-1 sm:mb-2 leading-tight">
+                                M.A. in International Studies, School of International Studies (SIS)</p>
+                            <p
+                                class="text-gray-600 text-[11px] sm:text-[13px] leading-snug sm:leading-relaxed text-justify">
+                                A career diplomat who served as the Ambassador of India to the Netherlands (2017–2020)
+                                and Press Secretary to President Pranab Mukherjee. During his time at JNU, he served as
+                                the Vice President of the Students' Union (1981-82). He has represented India before the
+                                International Court of Justice in landmark cases.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Alumni Connect / Call to Action -->
+        <section class="bg-jnuBlue py-16 text-white">
+            <div class="max-w mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-4">Connect with the JNU Network</h2>
+                <p class="text-blue-200 mb-8 text-lg">
+                    Are you a JNU Alumnus? Join our official network to mentor current students, share opportunities,
+                    and stay connected with your alma mater.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://forms.gle/vE4BHCMEBodw7hVV7" target="_blank"
+                        class="bg-jnuGold text-jnuBlue font-bold py-3 px-8 rounded-full hover:bg-white transition duration-300">
+                        Register as Alumni
+                    </a>
+                    <a href="https://www.jnu.ac.in/alumni-affairs" target="_blank"
+                        class="border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-jnuBlue transition duration-300">
+                        Visit JNU Alumni affairs Office
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#12384f] text-white py-4">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center flex-wrap gap-2 mb-1">
+                <nav class="flex items-center text-xs text-white space-x-0">
+                    <a href="https://www.jnu.ac.in/website-policy" class="hover:underline px-1">Website Policy</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/disclaimer" class="hover:underline px-1">Disclaimer</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/sitemap" class="hover:underline px-1">Sitemap</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/contact" class="hover:underline px-1">Contact Us</a>
+                    <span class="text-white">|</span>
+                    <a href="feedback.html" class="hover:underline px-1">Feedback</a>
+                </nav>
+            </div>
+
+            <div class="text-[12px] text-white leading-tight">
+                <p class="mb-1">&copy; Jawaharlal Nehru University. New Mehrauli Road, New Delhi 110067. All rights
+                    reserved.</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+
+</html>

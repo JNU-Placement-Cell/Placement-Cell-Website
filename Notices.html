@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notices | JNU Placement Cell</title>
+    <!-- Local Assets -->
+    <link href="assets/css/output.css" rel="stylesheet">
+    <link href="assets/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/css/google-fonts.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 font-sans antialiased text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Main Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="flex items-center gap-3">
+                        <div class="text-jnuBlue text-4xl">
+                            <img src="./assets/logos/jnulogo2.png" alt="JNU logo" class="h-12 w-12 object-contain">
+                        </div>
+                        <div class="border-l-2 border-gray-300 pl-3">
+                            <h1 class="text-lg font-serif font-bold text-jnuBlue leading-none">Jawaharlal Nehru
+                                university</h1>
+                            <p class="text-sm font-bold text-jnuRed tracking-widest uppercase mt-1">Placement Cell
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu (Simplified: Home only) -->
+                <div class="hidden md:flex items-center space-x-4 px-4">
+                    <a href="index.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">HOME</a>
+                    <a href="About_Us.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">ABOUT
+                        US</a>
+                    <a href="For_Recruiters.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">FOR
+                        RECRUITERS</a>
+                    <a href="students.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">FOR
+                        STUDENTS</a>
+                    <a href="Campus_Life.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">CAMPUS
+                        LIFE</a>
+                    <a href="team.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">OUR
+                        TEAM</a>
+                    <a href="Our_Alumni.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">OUR
+                        ALUMNI</a>
+                    <a href="Contact_Us.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">CONTACT
+                        US</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-serif font-bold text-jnuBlue">Notices</h1>
+            <a href="Archive.html"
+                class="bg-jnuGold hover:bg-amber-600 text-white font-bold py-2 px-4 rounded shadow transition text-sm flex items-center">
+                <i class="fas fa-archive mr-2"></i> Archive
+            </a>
+        </div>
+
+        <div class="bg-white rounded shadow-md overflow-hidden border border-gray-200">
+            <div class="overflow-x-auto">
+                <table class="min-w-full leading-normal">
+                    <thead>
+                        <tr>
+                            <th
+                                class="px-5 py-4 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-bold text-gray-600 uppercase tracking-wider w-1/4">
+                                Notice Date
+                            </th>
+                            <th
+                                class="px-5 py-4 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-bold text-gray-600 uppercase tracking-wider w-3/4">
+                                Title
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm" id="tableBody">
+                        <!-- Content will be injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination Controls Removed -->
+        </div>
+    </div>
+
+    <script>
+        // Data
+        let allNotices = [];
+
+        // Generate Data
+        function generateData() {
+            allNotices = [
+                //  { title: "HR Conclave Scheduled on 21st Feb 2025", date: "Feb 21, 2025", link: "#" }
+            ];
+        }
+
+
+        function renderTable() {
+            const tableBody = document.getElementById('tableBody');
+
+            tableBody.innerHTML = '';
+
+            allNotices.forEach(notice => {
+                const row = `
+                    <tr class="hover:bg-gray-50 transition">
+                        <td class="px-5 py-4 border-b border-gray-200 bg-white text-sm font-semibold text-gray-700">
+                            ${notice.date}
+                        </td>
+                        <td class="px-5 py-4 border-b border-gray-200 bg-white text-sm text-gray-800">
+                            <a href="${notice.link}" class="text-jnuBlue hover:text-jnuRed hover:underline transition">
+                                ${notice.title} <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i>
+                            </a>
+                        </td>
+                    </tr>
+                `;
+                tableBody.insertAdjacentHTML('beforeend', row);
+            });
+        }
+
+        // Initialize
+        generateData();
+        renderTable();
+    </script>
+
+
+    <!-- Footer -->
+    <footer class="bg-[#12384f] text-white py-4 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center flex-wrap gap-2 mb-1">
+                <nav class="flex items-center text-xs text-white space-x-0">
+                    <a href="https://www.jnu.ac.in/website-policy" class="hover:underline px-1">Website Policy</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/disclaimer" class="hover:underline px-1">Disclaimer</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/sitemap" class="hover:underline px-1">Sitemap</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/contact" class="hover:underline px-1">Contact Us</a>
+                    <span class="text-white">|</span>
+                    <a href="feedback.html" class="hover:underline px-1">Feedback</a>
+                </nav>
+            </div>
+            <div class="text-[12px] text-white leading-tight">
+                <p class="mb-1">&copy; Jawaharlal Nehru University. New Mehrauli Road, New Delhi 110067. All
+                    rights
+                    reserved.</p>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

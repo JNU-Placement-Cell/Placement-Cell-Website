@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Teams | Placement Cell — Jawaharlal Nehru University</title>
+
+    <!-- Local Assets -->
+    <link href="assets/css/output.css" rel="stylesheet">
+    <link href="assets/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/css/google-fonts.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 font-sans antialiased text-gray-800">
+
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="flex items-center gap-3">
+                        <div class="text-jnuBlue text-4xl">
+                            <img src="./assets/logos/jnulogo2.png" alt="JNU logo" class="h-12 w-12 object-contain">
+                        </div>
+                        <div class="border-l-2 border-gray-300 pl-3">
+                            <h1 class="text-lg font-serif font-bold text-jnuBlue leading-none">Jawaharlal Nehru
+                                university</h1>
+                            <p class="text-sm font-bold text-jnuRed tracking-widest uppercase mt-1">Placement Cell
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-4 px-4">
+                    <a href="index.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">HOME</a>
+                    <a href="About_Us.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">ABOUT
+                        US</a>
+                    <a href="For_Recruiters.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">FOR
+                        RECRUITERS</a>
+                    <a href="students.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">FOR
+                        STUDENTS</a>
+                    <a href="Campus_Life.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">CAMPUS
+                        LIFE</a>
+                    <a href="team.html"
+                        class="text-jnuBlue font-bold text-sm uppercase border-b-2 border-jnuRed whitespace-nowrap">OUR
+                        TEAM</a>
+                    <a href="Our_Alumni.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">OUR
+                        ALUMNI</a>
+                    <a href="Contact_Us.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">CONTACT
+                        US</a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleMobileMenu()"
+                        class="text-gray-600 hover:text-jnuBlue p-2 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu"
+            class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl z-40 left-0">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="index.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">HOME</a>
+                <a href="About_Us.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">ABOUT
+                    US</a>
+                <a href="For_Recruiters.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">FOR
+                    RECRUITERS</a>
+                <a href="students.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">FOR
+                    STUDENTS</a>
+                <a href="Campus_Life.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">CAMPUS
+                    LIFE</a>
+                <a href="team.html" class="block py-2 text-sm font-bold text-jnuBlue">OUR TEAM</a>
+                <a href="Our_Alumni.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">OUR
+                    ALUMNI</a>
+                <a href="Contact_Us.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">CONTACT
+                    US</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Toggle placed here -->
+    <div class="mt-6 flex justify-center">
+        <div class="team-toggle" role="tablist" aria-label="Team sections">
+            <button id="btn-admin" role="tab" aria-controls="panel-admin" aria-pressed="true">Administration</button>
+            <button id="btn-students" role="tab" aria-controls="panel-students" aria-pressed="false">Student
+                Team</button>
+        </div>
+    </div>
+    </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-0">
+        <!-- panels wrapper: track slides horizontally -->
+        <!-- Sections Container -->
+        <div id="sections-container" class="mt-6">
+
+            <!-- Panel A: Administration (default visible)-->
+            <section id="panel-admin" class="panel px-0">
+                <div class="admin-section mb-0">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+
+                        <!-- Dr. Arvind Kumar -->
+                        <div class="admin-card">
+                            <img src="assets/teams/KumarArvind.png" alt="DR. Arvind Kumar" class="admin-avatar">
+                            <div class="admin-info">
+                                <h3>DR. ARVIND KUMAR <span class="dept">(ABVSME)</span></h3>
+                                <div class="role">DIRECTOR</div>
+                                <a href="mailto:kumararvind@mail.jnu.ac.in" class="email-link">
+                                    <span class="email-icon"><i class="fas fa-envelope"></i></span>
+                                    kumararvind@mail.jnu.ac.in
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Prof. Pankaj Thakur -->
+                        <div class="admin-card">
+                            <img src="assets/teams/pankajthakur.jpg" alt="PROF. Pankaj Thakur" class="admin-avatar">
+                            <div class="admin-info">
+                                <h3>PROF. PANKAJ THAKUR <span class="dept">(SCNS)</span></h3>
+                                <div class="role">DEPUTY DIRECTOR</div>
+                                <a href="mailto:pankajthakur@mail.jnu.ac.in" class="email-link">
+                                    <span class="email-icon"><i class="fas fa-envelope"></i></span>
+                                    pankajthakur@mail.jnu.ac.in
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Dr. Anupama Namburu -->
+                        <div class="admin-card">
+                            <img src="assets/teams/anupamanamburu.jpg" alt="PROF. Anupama Namburu" class="admin-avatar">
+                            <div class="admin-info">
+                                <h3>PROF. ANUPAMA NAMBURU <span class="dept">(SoE)</span></h3>
+                                <div class="role">DEPUTY DIRECTOR</div>
+                                <a href="mailto:anupamanamburu@mail.jnu.ac.in" class="email-link">
+                                    <span class="email-icon"><i class="fas fa-envelope"></i></span>
+                                    anupamanamburu@mail.jnu.ac.in
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Dr. Sakshi Sharma -->
+                        <div class="admin-card">
+                            <img src="assets/teams/sakshisharma.jpg" alt="Dr. Sakshi Sharma" class="admin-avatar">
+                            <div class="admin-info">
+                                <h3>DR. SAKSHI SHARMA <span class="dept">(ABVSME)</span></h3>
+                                <div class="role">DEPUTY DIRECTOR</div>
+                                <a href="mailto:sakshisharma@mail.jnu.ac.in" class="email-link">
+                                    <span class="email-icon"><i class="fas fa-envelope"></i></span>
+                                    sakshisharma@mail.jnu.ac.in
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Dr. Milind Dhaware -->
+                        <div class="admin-card">
+                            <img src="assets/teams/milinddhaware.jpg" alt="Dr. Milind Dhaware" class="admin-avatar">
+                            <div class="admin-info">
+                                <h3>DR. MILIND DHAWARE <span class="dept">(SIS)</span></h3>
+                                <div class="role">DEPUTY DIRECTOR</div>
+                                <a href="mailto:milinddhavare@mail.jnu.ac.in" class="email-link">
+                                    <span class="email-icon"><i class="fas fa-envelope"></i></span>
+                                    milinddhavare@mail.jnu.ac.in
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Prof. Sandip Kumar Singh -->
+                        <div class="admin-card">
+                            <img src="assets/teams/sandeepsingh.png" alt="Prof. Sandip Kumar Singh"
+                                class="admin-avatar">
+                            <div class="admin-info">
+                                <h3>PROF. SANDIP KUMAR SINGH <span class="dept">(SIS)</span></h3>
+                                <div class="role">DEPUTY DIRECTOR</div>
+                                <a href="mailto:sandipksingh@mail.jnu.ac.in" class="email-link">
+                                    <span class="email-icon"><i class="fas fa-envelope"></i></span>
+                                    sandipksingh@mail.jnu.ac.in
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Ms. Pooja Sharma -->
+                        <div class="admin-card">
+                            <img src="assets/teams/poojasharma.png" alt="Ms. Pooja Sharma" class="admin-avatar">
+                            <div class="admin-info">
+                                <h3>MS. POOJA SHARMA</h3>
+                                <div class="role">ASSISTANT REGISTRAR</div>
+                                <a href="mailto:poojasharma@mail.jnu.ac.in" class="email-link">
+                                    <span class="email-icon"><i class="fas fa-envelope"></i></span>
+                                    poojasharma@mail.jnu.ac.in
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Office Staff -->
+                        <div class="office-staff">
+                            <h3>OFFICE STAFF</h3>
+                            <div class="staff-member">
+                                <div class="staff-name">SHRI PRAMOD KUMAR</div>
+                                <div class="staff-role">SECTION OFFICER</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Panel B: Student Team -->
+            <!-- Panel B: Student Team -->
+            <section id="panel-students" class="px-0 hidden">
+                <div class="admin-section">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+
+                        <!-- Left Column: Coordinators & Co-Coordinators -->
+                        <div>
+                            <!-- Coordinators -->
+                            <div class="mb-10">
+                                <h2 class="student-title">Coordinators</h2>
+                                <div class="space-y-4">
+                                    <div class="student-item">
+                                        <div class="student-name">Omi Vegada (PG)</div>
+                                        <a href="mailto:omikishor01@gmail.com" class="email-link">
+                                            <span class="email-icon"><i class="fas fa-envelope"></i></span>
+                                            omikishor01@gmail.com
+                                        </a>
+
+                                    </div>
+                                    <div class="student-item">
+                                        <div class="student-name">Arnika Mishra (PG)</div>
+                                        <a href="mailto:arnikam002@gmail.com" class="email-link">
+                                            <span class="email-icon"><i class="fas fa-envelope"></i></span>
+                                            arnikam002@gmail.com
+                                        </a>
+
+                                    </div>
+                                    <div class="student-item">
+                                        <div class="student-name">Poshal Gyamba (PhD)</div>
+                                        <a href="mailto:poshalwork@gmail.com" class="email-link">
+                                            <span class="email-icon"><i class="fas fa-envelope"></i></span>
+                                            poshalwork@gmail.com
+                                        </a>
+
+                                    </div>
+                                    <div class="student-item">
+                                        <div class="student-name">Harsha Gampa (UG)</div>
+                                        <a href="mailto:harsha66_soe@jnu.ac.in" class="email-link">
+                                            <span class="email-icon"><i class="fas fa-envelope"></i></span>
+                                            harsha66_soe@jnu.ac.in
+                                        </a>
+
+                                    </div>
+                                    <div class="student-item">
+                                        <div class="student-name">Rhishi Kalp Chandrika (PG)</div>
+                                        <a href="mailto:rhishikalpchandrika12@gmail.com" class="email-link">
+                                            <span class="email-icon"><i class="fas fa-envelope"></i></span>
+                                            rhishikalpchandrika12@gmail.com
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Co-Coordinators -->
+                            <div>
+                                <h2 class="student-title">Co-Coordinators</h2>
+                                <div class="space-y-1">
+                                    <div class="student-list-item">Sallangi Rahul Narayan (UG)</div>
+                                    <div class="student-list-item">Nettem Krishna Naga Sai (UG)</div>
+                                    <div class="student-list-item">Priyanshu Bhardwaj (UG)</div>
+                                    <div class="student-list-item">Emandi Srinivas (UG)</div>
+                                    <div class="student-list-item">Dev Bhardwaj (UG)</div>
+                                    <div class="student-list-item">Raj Raushan Kumar (UG)</div>
+                                    <div class="student-list-item">Yashika Choudhary (PG)</div>
+                                    <div class="student-list-item">Saumya Pal (PG)</div>
+                                    <div class="student-list-item">Avani Vivek Medhekar (PG)</div>
+                                    <div class="student-list-item">Dev Tamrakar (PG)</div>
+                                    <div class="student-list-item">Sakshi (PG)</div>
+                                    <div class="student-list-item">Sujay Singh (PG)</div>
+                                    <div class="student-list-item">Saumya Valvai (PG)</div>
+                                    <div class="student-list-item">Priyanshu Chaturvedi (PG)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Executive Members -->
+                        <div>
+                            <h2 class="student-title">Executive Members</h2>
+                            <div class="executive-grid">
+                                <div class="student-list-item">Sakshi Singh (PhD)</div>
+                                <div class="student-list-item">Akansha Baronia (PG)</div>
+                                <div class="student-list-item">Lael Mariya Bobby (UG)</div>
+                                <div class="student-list-item">Sana Rahman (PG)</div>
+                                <div class="student-list-item">Lucky Gehlot (UG)</div>
+                                <div class="student-list-item">Upasana Detha (PhD)</div>
+                                <div class="student-list-item">Sanidhya (UG)</div>
+                                <div class="student-list-item">Richa Mishra (PhD)</div>
+                                <div class="student-list-item">Mukul Sharma (UG)</div>
+                                <div class="student-list-item">Gordhan Singh (PhD)</div>
+                                <div class="student-list-item">Jyoti Sangwan (UG)</div>
+                                <div class="student-list-item">Pragaladhan A. (PhD)</div>
+                                <div class="student-list-item">Sujoy Bhadra (UG)</div>
+                                <div class="student-list-item">Vetriselvi A. (PhD)</div>
+                                <div class="student-list-item">Tanzeem Rashid (UG)</div>
+                                <div class="student-list-item">Akash Kaushik (PhD)</div>
+                                <div class="student-list-item">Anshul (UG)</div>
+                                <div class="student-list-item">Manash Pratin Nath (PhD)</div>
+                                <div class="student-list-item">Sabiha Javed (UG)</div>
+                                <div class="student-list-item">Sakibar Rahman (PhD)</div>
+                                <div class="student-list-item">Prakhar Singh (UG)</div>
+                                <div class="student-list-item">Harshita Saini (PhD)</div>
+                                <div class="student-list-item">Aradhya Raj (UG)</div>
+                                <div class="student-list-item">Sunil Kumar (PhD)</div>
+                                <div class="student-list-item">Harshita (UG)</div>
+                                <div class="student-list-item"></div>
+                                <div class="student-list-item">Yuktika Duggal (PG)</div>
+                                <div class="student-list-item"></div>
+                                <div class="student-list-item">Pulkita (PG)</div>
+                                <div class="student-list-item"></div>
+                                <div class="student-list-item">Shubham Vishwakarma (PG)</div>
+                                <div class="student-list-item"></div>
+                                <div class="student-list-item">Pooja (PG)</div>
+                                <div class="student-list-item"></div>
+                                <div class="student-list-item">Anuj Kumar (PG)</div>
+                                <div class="student-list-item"></div>
+                                <div class="student-list-item">Thaniya Fathima C A (PG)</div>
+                                <div class="student-list-item"></div>
+                                <div class="student-list-item">Abhinav Harsh (PG)</div>
+                                <div class="student-list-item"></div>
+                                <div class="student-list-item">Nayaz Ahmed (PG)</div>
+                                <div class="student-list-item"></div>
+                                <div class="student-list-item">Rajshayama (PG)</div>
+                                <div class="student-list-item"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="bg-[#12384f] text-white py-4">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center flex-wrap gap-2 mb-1">
+                <nav class="flex items-center text-xs text-white space-x-0">
+                    <a href="https://www.jnu.ac.in/website-policy" class="hover:underline px-1">Website Policy</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/disclaimer" class="hover:underline px-1">Disclaimer</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/sitemap" class="hover:underline px-1">Sitemap</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/contact" class="hover:underline px-1">Contact Us</a>
+                    <span class="text-white">|</span>
+                    <a href="feedback.html" class="hover:underline px-1">Feedback</a>
+                </nav>
+            </div>
+
+            <div class="text-[12px] text-white leading-tight">
+                <p class="mb-1">&copy; Jawaharlal Nehru University. New Mehrauli Road, New Delhi 110067. All rights
+                    reserved.</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // sliding toggle logic
+        // Visibility toggle logic
+        (function () {
+            const btnAdmin = document.getElementById('btn-admin');
+            const btnStudents = document.getElementById('btn-students');
+            const panelAdmin = document.getElementById('panel-admin');
+            const panelStudents = document.getElementById('panel-students');
+
+            function showPanel(panelName, pushHistory = false) {
+                if (panelName === 'students') {
+                    // Hide Admin, Show Students
+                    panelAdmin.classList.add('hidden');
+                    panelStudents.classList.remove('hidden');
+
+                    btnAdmin.setAttribute('aria-pressed', 'false');
+                    btnStudents.setAttribute('aria-pressed', 'true');
+
+                    // Lazy load images
+                    panelStudents.querySelectorAll('img').forEach(i => i.loading = 'lazy');
+                } else {
+                    // Show Admin, Hide Students
+                    panelAdmin.classList.remove('hidden');
+                    panelStudents.classList.add('hidden');
+
+                    btnAdmin.setAttribute('aria-pressed', 'true');
+                    btnStudents.setAttribute('aria-pressed', 'false');
+
+                    // Lazy load images
+                    panelAdmin.querySelectorAll('img').forEach(i => i.loading = 'lazy');
+                }
+                if (pushHistory) {
+                    history.pushState({ panel: panelName }, '', `#${panelName}`);
+                }
+            }
+
+            btnAdmin.addEventListener('click', () => showPanel('admin', true));
+            btnStudents.addEventListener('click', () => showPanel('students', true));
+
+            // keyboard support
+            btnAdmin.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight') btnStudents.focus(); });
+            btnStudents.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') btnAdmin.focus(); });
+
+            // default: show administration. check hash if present
+            const hash = location.hash.replace('#', '');
+            if (hash === 'students' || hash === 'panel-students') showPanel('students');
+            else showPanel('admin');
+
+            // handle back/forward
+            window.addEventListener('popstate', (e) => {
+                const statePanel = (e.state && e.state.panel) ? e.state.panel : (location.hash.replace('#', '') === 'students' ? 'students' : 'admin');
+                showPanel(statePanel, false);
+            });
+        })();
+
+        document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+            a.addEventListener('click', () => {/* keep default behaviour */ });
+        });
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+
+</html>

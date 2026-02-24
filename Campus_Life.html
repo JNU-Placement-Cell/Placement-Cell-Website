@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Life | JNU Placement Cell</title>
+    <!-- Local Assets -->
+    <link href="assets/css/output.css" rel="stylesheet">
+    <link href="assets/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/css/google-fonts.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <style>
+        /* Masonry Grid Support */
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+
+        .break-inside-avoid {
+            break-inside: avoid;
+        }
+
+        /* Image Hover Effects */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            /* Stronger gradient at bottom for text readability */
+            background: linear-gradient(to top, rgba(0, 51, 102, 0.95) 0%, rgba(0, 51, 102, 0.6) 40%, transparent 100%);
+            opacity: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+        }
+
+        .gallery-item img {
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Filter Button States */
+        .filter-btn {
+            background-color: white;
+            color: #4b5563;
+            /* text-gray-600 */
+            border-color: #d1d5db;
+            /* border-gray-300 */
+        }
+
+        .filter-btn.active {
+            background-color: #003366 !important;
+            color: white !important;
+            border-color: #003366 !important;
+        }
+
+        /* Album Indicator */
+        .album-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 51, 102, 0.6);
+            backdrop-filter: blur(4px);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            color: white;
+            opacity: 1;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        /* Responsive improvements for smooth transitions */
+        @media (max-width: 1024px) {
+
+            /* Tablet landscape - force single column for complex layouts */
+            .grid.lg\:grid-cols-2,
+            .grid.lg\:grid-cols-3 {
+                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Tablet portrait and below - mobile view */
+            .chart-container {
+                height: 300px;
+            }
+
+            /* Ensure all grids become single column */
+            .grid {
+                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+            }
+
+            /* Hide desktop navigation, show mobile */
+            .hidden.md\:flex {
+                display: none !important;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1023px) {
+
+            /* Tablet-specific adjustments */
+            .max-w-7xl {
+                max-width: 90%;
+            }
+
+            /* Force 2-column max for school cards on tablets */
+            .grid.md\:grid-cols-2.lg\:grid-cols-3 {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+
+            /* Mobile - ensure everything stacks */
+            h1,
+            h2,
+            h3 {
+                font-size: 90% !important;
+            }
+
+            .text-3xl {
+                font-size: 1.5rem !important;
+            }
+
+            .text-4xl {
+                font-size: 1.75rem !important;
+            }
+        }
+
+        /* Navigation responsive fixes */
+        @media (max-width: 1100px) {
+
+            /* Hide desktop menu earlier to prevent text wrapping/breaking */
+            .hidden.md\:flex {
+                display: none !important;
+            }
+
+            .flex.items-center.md\:hidden {
+                display: flex !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans antialiased text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="flex items-center gap-3">
+                        <div><img loading="lazy" src="assets/logos/jnulogo2.png" alt="JNU logo"
+                                class="h-12 w-12 object-contain"></div>
+                        <div class="border-l-2 border-gray-300 pl-3">
+                            <h1 class="text-lg font-serif font-bold text-jnuBlue leading-none">Jawaharlal Nehru
+                                university</h1>
+                            <p class="text-sm font-bold text-jnuRed tracking-widest uppercase mt-1">Placement Cell
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-4 px-4">
+                    <a href="index.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">HOME</a>
+                    <a href="About_Us.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">ABOUT
+                        US</a>
+                    <a href="For_Recruiters.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">FOR
+                        RECRUITERS</a>
+                    <a href="students.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">FOR
+                        STUDENTS</a>
+                    <a href="Campus_Life.html"
+                        class="text-jnuBlue font-bold text-sm uppercase border-b-2 border-jnuRed whitespace-nowrap">CAMPUS
+                        LIFE</a>
+                    <a href="team.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">OUR
+                        TEAM</a>
+                    <a href="Our_Alumni.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">OUR
+                        ALUMNI</a>
+                    <a href="Contact_Us.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">CONTACT
+                        US</a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleMobileMenu()"
+                        class="text-gray-600 hover:text-jnuBlue p-2 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu"
+            class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl z-40 left-0">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="index.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">HOME</a>
+                <a href="About_Us.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">ABOUT
+                    US</a>
+                <a href="For_Recruiters.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">FOR
+                    RECRUITERS</a>
+                <a href="students.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">FOR
+                    STUDENTS</a>
+                <a href="Campus_Life.html" class="block py-2 text-sm font-bold text-jnuBlue">CAMPUS LIFE</a>
+                <a href="team.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">OUR
+                    TEAM</a>
+                <a href="Our_Alumni.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">OUR
+                    ALUMNI</a>
+                <a href="Contact_Us.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">CONTACT
+                    US</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+
+        <!-- Page Header (Standardized) -->
+        <div class="bg-white border-b border-gray-200 py-10">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-jnuRed font-bold tracking-widest uppercase text-xs mb-3">Campus Life & Events</h2>
+                <h1 class="text-3xl md:text-4xl font-serif font-bold text-jnuBlue mb-4">Glimpses of JNU</h1>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg font-light">
+                    From high-energy placement drives to vibrant cultural festivals, explore the moments that define
+                    life at Jawaharlal Nehru University.
+                </p>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div
+            class="max-w-7xl mx-auto px-4 py-8 sticky top-20 z-30 bg-gray-50/95 backdrop-blur-sm border-b border-gray-200">
+            <div class="flex flex-wrap justify-center gap-3">
+                <button onclick="filterGallery('all')"
+                    class="filter-btn active px-5 py-2 rounded-full border text-sm font-bold transition duration-300">All
+                    Albums</button>
+                <button onclick="filterGallery('career_fair')"
+                    class="filter-btn px-5 py-2 rounded-full border text-sm font-bold transition duration-300">Career
+                    Fair</button>
+                <button onclick="filterGallery('cultural')"
+                    class="filter-btn px-5 py-2 rounded-full border text-sm font-bold transition duration-300">Cultural</button>
+                <button onclick="filterGallery('sports')"
+                    class="filter-btn px-5 py-2 rounded-full border text-sm font-bold transition duration-300">Sports</button>
+                <button onclick="filterGallery('community')"
+                    class="filter-btn px-5 py-2 rounded-full border text-sm font-bold transition duration-300">Community</button>
+                <button onclick="filterGallery('leadership')"
+                    class="filter-btn px-5 py-2 rounded-full border text-sm font-bold transition duration-300">Leadership</button>
+
+            </div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="masonry-grid" id="galleryContainer">
+
+                <!-- Album 1: Career Fair (Career Fair) -->
+                <div class="gallery-item break-inside-avoid group" onclick="openAlbum('career_fair')"
+                    data-category="career_fair">
+                    <div class="album-icon"><i class="fas fa-images"></i> 28 Photos</div>
+                    <img loading="lazy" src="assets/Campus_Life/Career Fair/Abhyudaya/Top.jpg" alt="Career Fair"
+                        class="w-full h-auto object-cover">
+                    <div class="gallery-overlay">
+                        <span class="text-jnuGold text-xs font-bold uppercase mb-1">Career Fair</span>
+                        <h3 class="text-white font-bold text-lg">Abhyudaya- Annual Career Fair</h3>
+                    </div>
+                </div>
+
+                <!-- Album 2: Dandiya Celebration (Cultural) -->
+                <div class="gallery-item break-inside-avoid group" onclick="openAlbum('dandiya')"
+                    data-category="cultural">
+                    <div class="album-icon"><i class="fas fa-images"></i> 1 Photo</div>
+                    <img loading="lazy"
+                        src="assets/Campus_Life/Cultural Activities/Dandiya Celebration/Dandiya Celebration.png"
+                        alt="Dandiya Celebration" class="w-full h-auto object-cover">
+                    <div class="gallery-overlay">
+                        <span class="text-jnuGold text-xs font-bold uppercase mb-1">Cultural</span>
+                        <h3 class="text-white font-bold text-lg">Dandiya Celebration</h3>
+                    </div>
+                </div>
+
+                <!-- Album 2: Dance & Theatre (Cultural) -->
+                <div class="gallery-item break-inside-avoid group" onclick="openAlbum('dance_theatre')"
+                    data-category="cultural">
+                    <div class="album-icon"><i class="fas fa-images"></i> 2 Photos</div>
+                    <img loading="lazy"
+                        src="assets/Campus_Life/Cultural Activities/Dance & Theatre/Dance Competitions.jpg"
+                        alt="Cultural Events" class="w-full h-auto object-cover">
+                    <div class="gallery-overlay">
+                        <span class="text-jnuGold text-xs font-bold uppercase mb-1">Cultural</span>
+                        <h3 class="text-white font-bold text-lg">Dance & Theatre</h3>
+                    </div>
+                </div>
+
+                <!-- Album 3: Cricket Tournament (Sports) -->
+                <div class="gallery-item break-inside-avoid group" onclick="openAlbum('cricket')"
+                    data-category="sports">
+                    <div class="album-icon"><i class="fas fa-images"></i> 1 Photo</div>
+                    <img loading="lazy"
+                        src="assets/Campus_Life/Sports Activities/Inter Hostel Cricket Tournament/Inter Hostel Cricket Tournament.png"
+                        alt="Cricket Tournament" class="w-full h-auto object-cover">
+                    <div class="gallery-overlay">
+                        <span class="text-jnuGold text-xs font-bold uppercase mb-1">Sports</span>
+                        <h3 class="text-white font-bold text-lg">Inter-Hostel Cricket</h3>
+                    </div>
+                </div>
+
+                <!-- Album 4: Sports Day & Tournaments (Sports) -->
+                <div class="gallery-item break-inside-avoid group" onclick="openAlbum('sports_day')"
+                    data-category="sports">
+                    <div class="album-icon"><i class="fas fa-images"></i> 3 Photos</div>
+                    <img loading="lazy"
+                        src="assets/Campus_Life/Sports Activities/Sports Day & Tournaments/National Sports Day Celebration.jpg"
+                        alt="Sports Day" class="w-full h-auto object-cover">
+                    <div class="gallery-overlay">
+                        <span class="text-jnuGold text-xs font-bold uppercase mb-1">Sports</span>
+                        <h3 class="text-white font-bold text-lg">Sports Day & Tournaments</h3>
+                    </div>
+                </div>
+
+                <!-- Album 5: Tree Plantation (Community) -->
+                <div class="gallery-item break-inside-avoid group" onclick="openAlbum('plantation')"
+                    data-category="community">
+                    <div class="album-icon"><i class="fas fa-images"></i> 1 Photo</div>
+                    <img loading="lazy" src="assets/Campus_Life/Community Service/Tree Plantation/Tree Plantation.png"
+                        alt="Tree Plantation" class="w-full h-auto object-cover">
+                    <div class="gallery-overlay">
+                        <span class="text-jnuGold text-xs font-bold uppercase mb-1">Community</span>
+                        <h3 class="text-white font-bold text-lg">Tree Plantation Drive</h3>
+                    </div>
+                </div>
+
+                <!-- Album 6: Yoga & Wellness (Cultural) -->
+                <div class="gallery-item break-inside-avoid group" onclick="openAlbum('yoga')" data-category="cultural">
+                    <div class="album-icon"><i class="fas fa-images"></i> 1 Photo</div>
+                    <img loading="lazy" src="assets/Campus_Life/Cultural Activities/Yoga & Wellness/Yoga Sessions.jpg"
+                        alt="Yoga Sessions" class="w-full h-auto object-cover">
+                    <div class="gallery-overlay">
+                        <span class="text-jnuGold text-xs font-bold uppercase mb-1">Cultural</span>
+                        <h3 class="text-white font-bold text-lg">Yoga & Wellness</h3>
+                    </div>
+                </div>
+
+                <!-- Album 7: Health & Community Care (Community) -->
+                <div class="gallery-item break-inside-avoid group" onclick="openAlbum('health_care')"
+                    data-category="community">
+                    <div class="album-icon"><i class="fas fa-images"></i> 2 Photos</div>
+                    <img loading="lazy"
+                        src="assets/Campus_Life/Community Service/Health & Community Care/Health Check-Up Camp.jpg"
+                        alt="Health Camp" class="w-full h-auto object-cover">
+                    <div class="gallery-overlay">
+                        <span class="text-jnuGold text-xs font-bold uppercase mb-1">Community</span>
+                        <h3 class="text-white font-bold text-lg">Health & Community Care</h3>
+                    </div>
+                </div>
+
+                <!-- Album 8: Adventure Activities (Cultural) -->
+                <div class="gallery-item break-inside-avoid group" onclick="openAlbum('adventure')"
+                    data-category="cultural">
+                    <div class="album-icon"><i class="fas fa-images"></i> 2 Photos</div>
+                    <img loading="lazy"
+                        src="assets/Campus_Life/Cultural Activities/Adventure Activities/Mountaineering Activties.png"
+                        alt="Adventure" class="w-full h-auto object-cover">
+                    <div class="gallery-overlay">
+                        <span class="text-jnuGold text-xs font-bold uppercase mb-1">Cultural</span>
+                        <h3 class="text-white font-bold text-lg">Adventure Activities</h3>
+                    </div>
+                </div>
+
+                <!-- Album 9: Leadership & Training (Leadership) -->
+                <div class="gallery-item break-inside-avoid group" onclick="openAlbum('leadership')"
+                    data-category="leadership">
+                    <div class="album-icon"><i class="fas fa-images"></i> 4 Photos</div>
+                    <img loading="lazy"
+                        src="assets/Campus_Life/Leadership Opportunities/Leadership & Training/National Youth Festival.jpg"
+                        alt="Leadership" class="w-full h-auto object-cover">
+                    <div class="gallery-overlay">
+                        <span class="text-jnuGold text-xs font-bold uppercase mb-1">Leadership</span>
+                        <h3 class="text-white font-bold text-lg">Leadership & Training</h3>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button
+                    class="bg-white border border-gray-300 text-gray-600 px-8 py-3 rounded-full font-bold hover:bg-jnuBlue hover:text-white hover:border-jnuBlue transition duration-300 shadow-sm">
+                    Load More Albums
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#12384f] text-white py-4">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center flex-wrap gap-2 mb-1">
+                <nav class="flex items-center text-xs text-white space-x-0">
+                    <a href="https://www.jnu.ac.in/website-policy" class="hover:underline px-1">Website Policy</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/disclaimer" class="hover:underline px-1">Disclaimer</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/sitemap" class="hover:underline px-1">Sitemap</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/contact" class="hover:underline px-1">Contact Us</a>
+                    <span class="text-white">|</span>
+                    <a href="feedback.html" class="hover:underline px-1">Feedback</a>
+                </nav>
+            </div>
+
+            <div class="text-[12px] text-white leading-tight">
+                <p class="mb-1">&copy; Jawaharlal Nehru University. New Mehrauli Road, New Delhi 110067. All rights
+                    reserved.</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal with Navigation -->
+    <div id="lightbox"
+        class="fixed inset-0 z-50 bg-black/95 hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <button onclick="closeLightbox()"
+            class="absolute top-4 right-4 text-white text-4xl hover:text-jnuRed transition z-50"
+            title="Close">&times;</button>
+
+        <!-- Prev Button -->
+        <button onclick="changeImage(-1)"
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:text-jnuGold transition z-50 p-4"
+            title="Previous">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="relative max-w-5xl max-h-[90vh] w-full flex flex-col items-center justify-center">
+            <img loading="lazy" id="lightbox-img" src="" alt="Full view"
+                class="max-w-full max-h-[80vh] rounded shadow-2xl object-contain transition-all duration-300">
+            <div id="lightbox-caption" class="mt-4 text-white text-center w-full text-lg font-medium"></div>
+            <div id="lightbox-counter" class="text-gray-400 text-sm mt-1"></div>
+        </div>
+
+        <!-- Next Button -->
+        <button onclick="changeImage(1)"
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:text-jnuGold transition z-50 p-4"
+            title="Next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <script>
+        // --- Gallery Data (Albums) ---
+        const albums = {
+            "dandiya": [
+                { src: "assets/Campus_Life/Cultural Activities/Dandiya Celebration/Dandiya Celebration.png", caption: "Dandiya Celebration: Traditional Cultural Festival" }
+            ],
+            "dance_theatre": [
+                { src: "assets/Campus_Life/Cultural Activities/Dance & Theatre/Dance Competitions.jpg", caption: "Dance Competition: Cultural Performances" },
+                { src: "assets/Campus_Life/Cultural Activities/Dance & Theatre/Theatre Performance.png", caption: "Theatre Performance: Dramatic Arts" }
+            ],
+            "cricket": [
+                { src: "assets/Campus_Life/Sports Activities/Inter Hostel Cricket Tournament/Inter Hostel Cricket Tournament.png", caption: "Inter-Hostel Cricket: Annual Tournament" }
+            ],
+            "sports_day": [
+                { src: "assets/Campus_Life/Sports Activities/Sports Day & Tournaments/National Sports Day Celebration.jpg", caption: "National Sports Day: Celebration" },
+                { src: "assets/Campus_Life/Sports Activities/Sports Day & Tournaments/Kabaddi Tournament.png", caption: "Kabaddi Tournament: Traditional Sport" },
+                { src: "assets/Campus_Life/Sports Activities/Sports Day & Tournaments/Volleyball Tournament.png", caption: "Volleyball Tournament: Team Spirit" }
+            ],
+            "plantation": [
+                { src: "assets/Campus_Life/Community Service/Tree Plantation/Tree Plantation.png", caption: "Tree Plantation Drive: Green Campus Initiative" }
+            ],
+            "yoga": [
+                { src: "assets/Campus_Life/Cultural Activities/Yoga & Wellness/Yoga Sessions.jpg", caption: "Yoga Sessions: Health & Mindfulness" }
+            ],
+            "health_care": [
+                { src: "assets/Campus_Life/Community Service/Health & Community Care/Health Check-Up Camp.jpg", caption: "Health Check-Up Camp: Medical Services" },
+                { src: "assets/Campus_Life/Community Service/Health & Community Care/Career Counseling.png", caption: "Career Counseling: Guidance & Support" }
+            ],
+            "adventure": [
+                { src: "assets/Campus_Life/Cultural Activities/Adventure Activities/Mountaineering Activties.png", caption: "Mountaineering Activities: Adventure Trips" },
+                { src: "assets/Campus_Life/Cultural Activities/Adventure Activities/Dessert Trekking.jpg", caption: "Desert Trekking: Outdoor Adventures" }
+            ],
+            "leadership": [
+                { src: "assets/Campus_Life/Leadership Opportunities/Leadership & Training/National Youth Festival.jpg", caption: "National Youth Festival: Youth Development" },
+                { src: "assets/Campus_Life/Leadership Opportunities/Leadership & Training/Swacchta Awareness.jpg", caption: "Swachhta Awareness: Cleanliness Campaign" },
+                { src: "assets/Campus_Life/Leadership Opportunities/Leadership & Training/Web-Development Training.jpg", caption: "Web Development Training: Skill Building" },
+                { src: "assets/Campus_Life/Leadership Opportunities/Leadership & Training/Best Volunteer Award.jpg", caption: "Best Volunteer Award: Recognition Ceremony" }
+            ],
+            "career_fair": [
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/Top.jpg", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG-20250308-WA0039.jpg", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG-20250308-WA0042.jpg", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG-20250308-WA0045.jpg", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG-20250308-WA0047.jpg", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG-20250308-WA0049.jpg", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG-20250308-WA0053.jpg", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG-20250308-WA0054.jpg", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG-20250308-WA0058.jpg", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG-20250308-WA0059.jpg", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG-20250308-WA0062.jpg", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG-20250308-WA0064.jpg", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG-20250308-WA0069.jpg", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG_0831.JPG", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG_0833.JPG", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG_0835.JPG", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG_0839.JPG", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG_0841.JPG", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG_0842.JPG", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG_0844.JPG", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG_0847.JPG", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG_0848.JPG", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG_0855.JPG", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG_0860.JPG", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG_0863.JPG", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG_0867.JPG", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG_0876.JPG", caption: "Career Fair" },
+                { src: "assets/Campus_Life/Career Fair/Abhyudaya/IMG_0887.JPG", caption: "Career Fair" }
+            ]
+        };
+
+        // --- Global State for Lightbox ---
+        let currentAlbumImages = [];
+        let currentImageIndex = 0;
+
+        // Mobile Menu Logic
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        // Gallery Filtering Logic
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update Buttons with Strict Matching
+            buttons.forEach(btn => {
+                // Extract 'all' from "filterGallery('all')"
+                const onClickVal = btn.getAttribute('onclick');
+                // Simple regex to get the string inside single quotes
+                const btnCategory = onClickVal.match(/'([^']+)'/)[1];
+
+                if (btnCategory === category) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Filter Items
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.classList.remove('hidden');
+                    setTimeout(() => item.style.opacity = '1', 50);
+                } else {
+                    item.style.opacity = '0';
+                    setTimeout(() => item.classList.add('hidden'), 300);
+                }
+            });
+        }
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+
+        function openAlbum(albumId) {
+            if (albums[albumId]) {
+                currentAlbumImages = albums[albumId];
+                currentImageIndex = 0;
+                updateLightboxContent();
+
+                lightbox.classList.remove('hidden');
+                setTimeout(() => lightbox.classList.remove('opacity-0'), 10);
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+                currentAlbumImages = [];
+            }, 300);
+        }
+
+        function changeImage(direction) {
+            if (currentAlbumImages.length === 0) return;
+
+            currentImageIndex += direction;
+
+            if (currentImageIndex < 0) {
+                currentImageIndex = currentAlbumImages.length - 1;
+            } else if (currentImageIndex >= currentAlbumImages.length) {
+                currentImageIndex = 0;
+            }
+
+            lightboxImg.style.opacity = '0.5';
+            setTimeout(() => {
+                updateLightboxContent();
+                lightboxImg.style.opacity = '1';
+            }, 150);
+        }
+
+        function updateLightboxContent() {
+            const imageData = currentAlbumImages[currentImageIndex];
+            lightboxImg.src = imageData.src;
+            lightboxCaption.innerText = imageData.caption;
+            lightboxCounter.innerText = `Image ${currentImageIndex + 1} of ${currentAlbumImages.length}`;
+        }
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target.id === 'lightbox-img-container') closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') changeImage(-1);
+                if (e.key === 'ArrowRight') changeImage(1);
+            }
+        });
+
+    </script>
+</body>
+
+</html>

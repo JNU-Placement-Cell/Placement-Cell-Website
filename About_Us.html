@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | JNU Placement Cell</title>
+
+    <!-- Local CSS Assets -->
+    <link href="assets/css/output.css" rel="stylesheet">
+    <link href="assets/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/css/google-fonts.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+
+    <!-- Highcharts Dependencies -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+</head>
+
+<body class="bg-gray-50 font-sans antialiased text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="flex items-center gap-3">
+                        <div><img src="assets/logos/jnulogo2.png" alt="JNU logo" class="h-12 w-12 object-contain"></div>
+                        <div class="border-l-2 border-gray-300 pl-3">
+                            <h1 class="text-lg font-serif font-bold text-jnuBlue leading-none">Jawaharlal Nehru
+                                university</h1>
+                            <p class="text-sm font-bold text-jnuRed tracking-widest uppercase mt-1">Placement Cell
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-4 px-4">
+                    <a href="index.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">HOME</a>
+                    <a href="About_Us.html"
+                        class="text-jnuBlue font-bold text-sm uppercase border-b-2 border-jnuRed whitespace-nowrap">ABOUT
+                        US</a>
+                    <a href="For_Recruiters.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">FOR
+                        RECRUITERS</a>
+                    <a href="students.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">FOR
+                        STUDENTS</a>
+                    <a href="Campus_Life.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">CAMPUS
+                        LIFE</a>
+                    <a href="team.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">OUR
+                        TEAM</a>
+                    <a href="Our_Alumni.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">OUR
+                        ALUMNI</a>
+                    <a href="Contact_Us.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">CONTACT
+                        US</a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleMobileMenu()"
+                        class="text-gray-600 hover:text-jnuBlue p-2 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu"
+            class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl z-40 left-0">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="index.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">HOME</a>
+                <a href="About_Us.html" class="block py-2 text-sm font-bold text-jnuBlue">ABOUT US</a>
+                <a href="For_Recruiters.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">FOR
+                    RECRUITERS</a>
+                <a href="students.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">FOR
+                    STUDENTS</a>
+                <a href="Campus_Life.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">CAMPUS
+                    LIFE</a>
+                <a href="team.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">OUR
+                    TEAM</a>
+                <a href="Our_Alumni.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">OUR
+                    ALUMNI</a>
+                <a href="Contact_Us.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">CONTACT
+                    US</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Vice Chancellor's Message -->
+    <section class="max-w-7xl mx-auto px-4 pt-10 pb-8">
+        <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl shadow-xl border-t-4 border-jnuRed">
+            <h2 class="text-3xl font-bold text-jnuBlue font-serif mb-6 text-center">Message from Vice Chancellor</h2>
+            <div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+                <div class="w-48 h-48 rounded-lg overflow-hidden border-4 border-white shadow-lg mb-4">
+                    <img src="assets/vcimage.png" alt="Vice Chancellor JNU" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-xl font-serif font-bold text-gray-800">Prof. Santishree D. Pandit</h3>
+                <p class="text-sm text-jnuRed font-bold uppercase tracking-wider mb-6">Vice Chancellor, JNU</p>
+
+                <div class="relative w-full">
+                    <div class="text-gray-600 italic text-sm leading-relaxed space-y-4 text-justify relative z-10">
+                        <p>
+                            “Jawaharlal Nehru University (JNU) provides a holistic and intellectually stimulating
+                            environment where students continuously grow, evolve, and prepare themselves to meet
+                            real-world challenges. Regular interactions with accomplished and distinguished faculty
+                            foster critical thinking and deepen their understanding beyond textbooks, nurturing
+                            curiosity, leadership, and a lifelong passion for learning.
+                        </p>
+                        <p>
+                            JNU has consistently ranked among the top academic institutions in the country and world.
+                            Our commitment lies in preparing students to become future leaders—with the vision,
+                            conviction, and capacity to translate academic learning into professional excellence.
+
+                        </p>
+                        <p>Our Alumnus have been serving as distinguished bureaucrats, politicians, academicians, policy
+                            makers, entrepreneurs, researchers and industry leaders across the globe. I am confident
+                            that our students shall continue this legacy of excellence.</p>
+
+                        <p>
+                            We are committed to ensuring a seamless and enriching recruiting experience for our industry
+                            partners and look forward to building long-term, meaningful collaborations with national and
+                            international organizations.”
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Director's Message -->
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-jnuBlue">
+            <h2 class="text-3xl font-bold text-jnuBlue font-serif mb-6 text-center">Message from Director of Placement
+                Cell</h2>
+            <div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+                <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg mb-4">
+                    <img src="assets/KumarArvind.png" alt="Director JNU Placement Cell"
+                        class="w-full h-full object-contain">
+                </div>
+                <h3 class="text-xl font-serif font-bold text-gray-800">Prof. Arvind Kumar</h3>
+                <p class="text-sm text-jnuRed font-bold uppercase tracking-wider mb-6">Director, Placement Cell</p>
+
+                <div class="relative w-full">
+                    <div class="text-gray-600 italic text-sm leading-relaxed space-y-4 text-justify relative z-10">
+                        <p>
+                            “JNU attracts students across the globe in varied disciplines such as Engineering,
+                            Management, Languages, Sciences, Social Sciences, etc . Our students are nurtured in a
+                            holistic academic environment that goes beyond classroom learning—shaping them into
+                            responsible citizens and professionals prepared to take on real-life challenges.
+                        </p>
+                        <p>
+                            The Placement Cell acts as a vital link between academia and industry. We work tirelessly to
+                            build meaningful connections with organizations and facilitate employment opportunities that
+                            align with the diverse skill sets and aspirations of our students. Each year, we witness a
+                            growing number of reputed organizations partnering with us. We also focus on career
+                            development through workshops, counselling sessions, and skill-building initiatives to make
+                            our students industry ready.
+                        </p>
+                        <p>
+                            We warmly invite recruiting partners to engage for internships, placements and long term
+                            associations.
+                        </p>
+                        <p>
+                            Look forward to welcoming you to our campus.“
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Introduction -->
+    <section class="max-w-7xl mx-auto px-4 pt-10 pb-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- About University -->
+            <div>
+                <h2 class="text-3xl font-bold text-jnuBlue font-serif border-l-4 border-jnuRed pl-4 mb-4">About
+                    Jawaharlal Nehru University</h2>
+                <div class="text-gray-600 leading-relaxed text-justify space-y-4">
+                    <p>
+                        Jawaharlal Nehru University (JNU), established in 1969, is one of India's premier public
+                        universities, consistently ranked among the top institutions in the country. Located in New
+                        Delhi, JNU is renowned for its academic excellence, vibrant intellectual culture, and strong
+                        commitment to social responsibility.
+                    </p>
+                    <p>
+                        The university comprises 13 schools and 8 special centres, offering a wide array of
+                        interdisciplinary programs across the engineering, management, languages, humanities, social
+                        sciences and sciences. JNU fosters critical thinking, innovation, and inclusive learning through
+                        its research-intensive curriculum and close faculty-student engagement.
+                    </p>
+
+                    <!-- Collapsible Content for Mobile -->
+                    <div id="univ-expanded" class="hidden md:block space-y-4">
+                        <p>
+                            Accredited with NAAC A++ and ranked 2nd in NIRF 2025 (overall university category), JNU is
+                            home to a diverse and dynamic student community mentored by some of the country's most
+                            distinguished faculty. Its alumni have made significant contributions across academia, civil
+                            services, media, politics, national and international organizations, and the corporate
+                            world.
+                        </p>
+                        <p>
+                            JNU graduates bring with them a unique blend of analytical depth, ethical awareness, and
+                            global perspective. Whether you're seeking engineers, managers, researchers, policy experts,
+                            consultants, data scientists, economists, language experts or any other professionals, JNU
+                            students are equipped to deliver meaningful impact in today's evolving professional
+                            landscape.
+                        </p>
+                    </div>
+
+                    <button onclick="toggleReadMore('univ-expanded', 'univ-btn')" id="univ-btn"
+                        class="text-jnuBlue font-bold hover:text-jnuRed focus:outline-none transition-colors flex items-center gap-1 md:hidden">
+                        Read more <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- About Placement Cell -->
+            <div class="bg-blue-50 p-6 rounded-lg border border-blue-100 h-fit">
+                <h3 class="text-xl font-bold text-jnuBlue mb-2">About Placement Cell</h3>
+                <div class="text-sm text-gray-700 space-y-3 text-justify">
+                    <p>
+                        The Placement Cell at Jawaharlal Nehru University (JNU) serves as a vital link between the
+                        academic world and the professional sphere. It is committed to facilitating meaningful career
+                        opportunities for students by connecting them with a wide range of national and international
+                        organizations across sectors.
+                    </p>
+                    <p>
+                        The Cell works proactively to engage with recruiters, organize campus placements, internships
+                        and support students in their career aspirations. It also conducts skill development workshops,
+                        career counseling sessions, resume-building guidance, and interview preparation activities to
+                        ensure students are industry-ready.
+                    </p>
+
+                    <!-- Collapsible Content for Mobile -->
+                    <div id="cell-expanded" class="hidden md:block space-y-3">
+                        <p>
+                            With a focus on both employment and internships, the Placement Cell caters to students from
+                            diverse academic backgrounds, including engineering, management, social sciences, sciences,
+                            language studies, international relations,etc. JNU students are known for their strong
+                            analytical abilities, adaptability, and ethical outlook—qualities highly valued by
+                            employers. The Placement Cell is committed to offering a smooth and efficient recruitment
+                            experience, while building long-term, mutually beneficial relationships with recruiting
+                            partners.
+                        </p>
+                    </div>
+
+                    <button onclick="toggleReadMore('cell-expanded', 'cell-btn')" id="cell-btn"
+                        class="text-jnuBlue font-bold text-xs hover:text-jnuRed focus:outline-none mt-2 flex items-center gap-1 md:hidden">
+                        Read more <i class="fas fa-chevron-down text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Honours & Accreditations (Updated) -->
+    <section class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-serif font-bold text-jnuGold">Honours and Rankings</h2>
+                <div class="w-24 h-1 bg-white mx-auto mt-2 opacity-50 mb-6"></div>
+                <p class="text-gray-300 max-w-4xl mx-auto leading-relaxed text-lg">
+                    With top-tier accreditations and international recognition, JNU represents academic and professional
+                    distinction. Its graduates are prepared to thrive in today’s dynamic and competitive job market.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1: NAAC -->
+                <div
+                    class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:bg-white/20 transition duration-300 border border-white/10">
+                    <div
+                        class="w-14 h-14 flex items-center justify-center border border-jnuGold bg-white rounded mb-4 shadow-sm p-1">
+                        <img src="assets/logos/NAAC-Logo.png" alt="NAAC" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">NAAC A++</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Accredited A++ by NAAC — India’s highest institutional grade.
+                    </p>
+                </div>
+
+                <!-- Card 2: NIRF -->
+                <div
+                    class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:bg-white/20 transition duration-300 border border-white/10">
+                    <div
+                        class="w-14 h-14 flex items-center justify-center border border-jnuGold bg-white rounded mb-4 shadow-sm p-1">
+                        <img src="assets/logos/nirf.png" alt="NIRF" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">NIRF 2025</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Ranked 2nd in Universities and 9th Overall; maintained 2nd rank in University category for
+                        nine consecutive years (2017–2025).
+                    </p>
+                </div>
+
+                <!-- Card 3: IIRF -->
+                <div
+                    class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:bg-white/20 transition duration-300 border border-white/10">
+                    <div
+                        class="w-14 h-14 flex items-center justify-center border border-jnuGold bg-white rounded mb-4 shadow-sm p-1">
+                        <img src="assets/logos/IIRF.jpg" alt="IIRF" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">IIRF 2025</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Ranked #1 among Central Universities, based on placement performance, learning resources, and
+                        faculty.
+                    </p>
+                </div>
+
+                <!-- Card 4: UGC -->
+                <div
+                    class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:bg-white/20 transition duration-300 border border-white/10 lg:col-span-1 md:col-span-1">
+                    <div
+                        class="w-14 h-14 flex items-center justify-center border border-jnuGold bg-white rounded mb-4 shadow-sm p-1">
+                        <img src="assets/logos/UGC.png" alt="UGC" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">UGC Category-I</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Recognized for academic independence and excellence (Graded Autonomy).
+                    </p>
+                </div>
+
+                <!-- Card 5: QS World -->
+                <div
+                    class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:bg-white/20 transition duration-300 border border-white/10">
+                    <div
+                        class="w-14 h-14 flex items-center justify-center border border-jnuGold bg-white rounded mb-4 shadow-sm p-1">
+                        <img src="assets/logos/QS-logo.png" alt="QS World" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">QS World University Rankings 2026</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Placed #558 globally, #16 in Southern Asia, 130# in Asia and #29 globally in Development
+                        Studies.
+                    </p>
+                </div>
+
+                <!-- Card 6: India Today -->
+                <div
+                    class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:bg-white/20 transition duration-300 border border-white/10">
+                    <div
+                        class="w-14 h-14 flex items-center justify-center border border-jnuGold bg-white rounded mb-4 shadow-sm p-1">
+                        <img src="assets/logos/india-today-logo.png" alt="India Today"
+                            class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">India Today 2025</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Ranked #1 Universities in India 2025.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Schools & Centres -->
+    <section class="max-w-7xl mx-auto px-4 py-16 bg-white border-t border-gray-100">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-serif font-bold text-jnuBlue">Schools & Centres</h2>
+            <p class="text-gray-500 mt-2">Discover our diverse academic landscape comprising 21 Schools and Special
+                Centres.</p>
+        </div>
+
+        <!-- Initial Grid (First 6) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="schoolsGrid">
+
+            <!-- ABVSME -->
+            <div
+                class="bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">ABVSME</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">Atal Bihari Vajpayee School
+                    of Management and Entrepreneurship</p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> MBA & PhD</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> Management</p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Lokesh Jindal</p>
+                                <a href="mailto:lokeshjindal@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> lokeshjindal@mail.jnu.ac.in
+                                </a>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Brajesh Kr. Tiwari</p>
+                                <a href="mailto:brajeshtiwari@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> brajeshtiwari@mail.jnu.ac.in
+                                </a>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Sakshi Sharma</p>
+                                <a href="mailto:sakshisharma@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> sakshisharma@mail.jnu.ac.in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/abvsme" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore School <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- School of Engineering -->
+            <div
+                class="bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SoE</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">School of Engineering</p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> B.Tech, M.Tech &
+                        PhD</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> CSE, ECE, Mechanical
+                    </p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Mukesh Kumar Giluka</p>
+                                <a href="mailto:mkgiluka@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> mkgiluka@mail.jnu.ac.in
+                                </a>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Lavish Kumar Singh</p>
+                                <a href="mailto:lavish.singh2011@gmail.com"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> lavish.singh2011@gmail.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://soe.jnu.ac.in" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore School <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCSS -->
+            <div
+                class="bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SC&SS</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">School of Computer and
+                    System Sciences
+                </p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> MCA, M.Tech &
+                        PhD
+                    </p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> Computer Science and
+                        Technology, Data Science</p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Sachin Balkrushna Jadhav</p>
+                                <a href="mailto:sachinjadhav@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> sachinjadhav@mail.jnu.ac.in
+                                </a>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Jasraj Meena</p>
+                                <a href="mailto:jasrajmeena@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> jasrajmeena@mail.jnu.ac.in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/scss" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore School <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIS -->
+            <div
+                class="bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SIS</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">School of International
+                    Studies</p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> M.A. & PhD</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> International Trade,
+                        Politics, Legal, World Economy, South Asian Studies, etc.</p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Prof. Srabani Roy Choudhary</p>
+                                <a href="mailto:sroyc2@gmail.com"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> sroyc2@gmail.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/sis" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore School <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLL&CS -->
+            <div
+                class="bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SLL&CS</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">School of Language,
+                    Literature and Culture Studies</p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> B.A., M.A. & PhD
+                    </p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> French,
+                        German,Japanese, etc.</p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Sonu Saini</p>
+                                <a href="mailto:sonusaini@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> sonusaini@mail.jnu.ac.in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/sllcs" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore School <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SBT -->
+            <div
+                class="bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SBT</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">School of Biotechnology</p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> M.Sc. & PhD</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> Biotechnology</p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Abhinav Grover</p>
+                                <a href="mailto:agrover@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> agrover@mail.jnu.ac.in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/sbt" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore School <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hidden Schools -->
+            <div
+                class="hidden-school hidden md:flex bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SAA</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold tracking-wide uppercase">School of Art and Aesthetics
+                </p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> MA & PhD</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> Cinema, Visual &
+                        Performing Arts
+                    </p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Mrinmoyee Ray</p>
+                                <a href="mailto:mrinmoyeeray@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> mrinmoyeeray@mail.jnu.ac.in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/saa" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore School <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Missing: SCIS -->
+            <div
+                class="hidden-school hidden md:flex bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SCIS</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">School of Computational and
+                    Integrative Sciences</p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> M.Sc., P.G.
+                        Diploma & PhD</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> Computational and
+                        Integrative Sciences &
+                        Big Data Analytics</p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Gajendra Pratap Singh</p>
+                                <a href="mailto:gajendra@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> gajendra@mail.jnu.ac.in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/scis" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore School <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="hidden-school hidden md:flex bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SES</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">School of Environmental
+                    Sciences</p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> M.Sc.&
+                        M.Phil./Ph.D.</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> Environmental
+                        Sciences</p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Kumar Pranaw</p>
+                                <a href="mailto:kpranaw@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> kpranaw@mail.jnu.ac.in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/ses" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore School <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Missing: SLS -->
+            <div
+                class="hidden-school hidden md:flex bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SLS</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">School of Life Sciences</p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> M.Sc. & PhD</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> Life Sciences</p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Prof. Praveen Kumar Verma</p>
+                                <a href="mailto:praveenkverma@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> praveenkverma@mail.jnu.ac.in
+                                </a>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Bhupendra Chaudhary</p>
+                                <a href="mailto:bhupendra@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> bhupendra@mail.jnu.ac.in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/sls" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore School <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="hidden-school hidden md:flex bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SPS</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">School of Physical Sciences
+                </p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> M.Sc. & PhD</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> Physics, Chemistry,
+                        Mathematics
+                    </p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. L Raju Chowhan</p>
+                                <a href="mailto:chowhan@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> chowhan@mail.jnu.ac.in
+                                </a>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Pushpendra Kumar</p>
+                                <a href="mailto:pushpendra@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> pushpendra@mail.jnu.ac.in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/sps" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore School <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Missing: SSIS -->
+            <div
+                class="hidden-school hidden md:flex bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SSIS</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">School of Sanskrit and Indic
+                    Studies</p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> M.A. & PhD</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> Sanskrit, Ayurveda</p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Prof. Gopal Lal Meena</p>
+                                <a href="mailto:glmeena@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> glmeena@mail.jnu.ac.in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/ssis" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore School <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="hidden-school hidden md:flex bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SSS</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">School of Social Sciences
+                </p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> M.A. &
+                        M.Phil./PhD</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> Economics, History,
+                        Political Science, Media Studies,Philosophy,etc.</p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Sayantan Mandal</p>
+                                <a href="mailto:smandal@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> smandal@mail.jnu.ac.in
+                                </a>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Prakasha Chandra Sahoo</p>
+                                <a href="mailto:prakashsahoo@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> prakashsahoo@mail.jnu.ac.in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/sss" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore School <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="hidden-school hidden md:flex bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">CSLG</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">Centre for the Study of Law
+                    and Governance</p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> M.Phil./PhD</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> Law</p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Varada Sambus</p>
+                                <a href="mailto:varada@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> varada@mail.jnu.ac.in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/cslg" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore Centre <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="hidden-school hidden md:flex bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SCDR</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">Special Centre for Disaster
+                    Research</p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> M.A. & PhD</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> Disaster Studies</p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Nikunj Makwana</p>
+                                <a href="mailto:nikunj@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> nikunj@mail.jnu.ac.in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/scdr" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore Centre <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Missing: SCMM -->
+            <div
+                class="hidden-school hidden md:flex bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SCMM</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">Special Centre for Molecular
+                    Medicine</p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> M.Sc. & PhD</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> Molecular Medicine</p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Someswar Rao Sagurthi</p>
+                                <a href="mailto:drsomeswar@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> drsomeswar@mail.jnu.ac.in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/scmm" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore Centre <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Missing: SCNS -->
+            <div
+                class="hidden-school hidden md:flex bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SCNS</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">Special Centre for Nano
+                    Sciences</p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> M.Tech. & PhD
+                    </p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> Nanotechnology</p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Prakash Kanoo</p>
+                                <a href="mailto:prakashkanoo@gmail.com"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> prakashkanoo@gmail.com
+                                </a>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Neha Paras</p>
+                                <a href="mailto:neharao1993@gmail.com"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> neharao1993@gmail.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/scns" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore Centre <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Missing: SCNSS -->
+            <div
+                class="hidden-school hidden md:flex bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SCNSS</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">Special Centre for National
+                    Security Studies</p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> PhD</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> National Security</p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. Gaurav Tyagi</p>
+                                <a href="mailto:gauravtyagi@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> gauravtyagi@mail.jnu.ac.in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/scnss" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore Centre <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Missing: SCSNEI -->
+            <div
+                class="hidden-school hidden md:flex bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SCSNEI</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">Special Centre for the Study
+                    of North East India</p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> PhD</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> North East Studies</p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Prof. Vinay Kumar Rao</p>
+                                <a href="mailto:vinaykrao@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> vinaykrao@mail.jnu.ac.in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/scsnei" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore Centre <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Missing: SCeL -->
+            <div
+                class="hidden-school hidden md:flex bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SCeL</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">Special Centre for
+                    E-learning</p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong> Language,
+                        Literature, History, etc.</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> E-Learning</p>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/sllcs/elearning" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore Centre <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Missing: SCTS -->
+            <div
+                class="hidden-school hidden md:flex bg-white rounded-xl shadow border border-gray-100 p-6 card-hover transition duration-300 flex flex-col h-full">
+
+                <h3 class="font-bold text-lg text-gray-800 mb-2">SCTS</h3>
+                <p class="text-xs text-gray-500 mb-4 font-semibold uppercase tracking-wide">Special Centre for Tamil
+                    Studies</p>
+                <div class="flex-grow flex flex-col space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-graduation-cap text-jnuGold w-5"></i> <strong>Courses:</strong>M.A. & PhD</p>
+                    <p><i class="fas fa-layer-group text-jnuGold w-5"></i> <strong>Area:</strong> Tamil Studies</p>
+                    <div class="pt-3 mt-3 border-t border-gray-200">
+                        <p class="text-xs font-bold text-gray-700 mb-1"><i
+                                class="fas fa-user-tie text-jnuBlue mr-1"></i> Faculty Coordinator:</p>
+                        <ul class="list-disc ml-5 space-y-2 mt-2">
+                            <li>
+                                <p class="text-xs text-gray-600">Dr. N Chandra Segaran</p>
+                                <a href="mailto:chandrasegaran@mail.jnu.ac.in"
+                                    class="text-xs text-jnuBlue hover:text-jnuRed flex items-center gap-1">
+                                    <i class="fas fa-envelope text-[10px]"></i> chandrasegaran@mail.jnu.ac.in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-2 border-t border-gray-50">
+                        <a href="https://www.jnu.ac.in/scts" target="_blank"
+                            class="text-xs text-jnuBlue hover:text-jnuRed font-bold flex items-center gap-1 transition-colors">
+                            Explore Centre <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Toggle Button -->
+        <div class="text-center mt-10 md:hidden">
+            <button id="viewMoreBtn" onclick="toggleSchools()"
+                class="bg-white border-2 border-jnuBlue text-jnuBlue hover:bg-jnuBlue hover:text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                View All Schools & Centres <i class="fas fa-chevron-down ml-1" id="btnIcon"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Section 4: Headways in Research (Updated) -->
+    <section class="bg-lightGray py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-serif font-bold text-jnuBlue mb-6 flex items-center">
+                        <span class="w-1 h-8 bg-jnuGold mr-3"></span> Headways in Research
+                    </h3>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                        JNU covers a large number of interdisciplinary fields spread among various Schools and Special
+                        Centres. A number of research projects are being carried out across a broad range of disciplines
+                        of Languages, Humanities, and Sciences, in collaboration with various institutions and
+                        organizations at both national and international levels.
+                    </p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Every year JNU awards hundreds of MPhil and PhD degrees, indicating the quality and magnitude of
+                        research in the university.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <h4 class="font-bold text-gray-800 mb-4 text-center">Academic Contributions by Year</h4>
+                    <!-- 3D Research Chart Container -->
+                    <div id="researchChart3d" class="chart-container"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Section 6: Global Footprint -->
+    <section class="bg-lightGray py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-4xl font-serif font-bold text-jnuBlue mb-4">Global Footprint</h2>
+                <div class="w-24 h-1 bg-jnuGold mx-auto mb-6"></div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded-xl border border-gray-200 p-8">
+                <div class="text-gray-700 leading-relaxed space-y-4">
+                    <p class="text-lg">
+                        Jawaharlal Nehru University (JNU) actively collaborates with several foreign Universities and
+                        Institutions and has established academic linkages with universities and institutions in around
+                        48 countries. Possibilities are being explored for academic collaborations with foreign
+                        universities of repute in other countries also.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-globe text-jnuBlue mr-3 mt-1"></i>
+                            <span>Partnerships with premier institutions worldwide for academic exchange and research
+                                collaboration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-handshake text-jnuBlue mr-3 mt-1"></i>
+                            <span>Active MoUs, Agreements of Cooperation (AoCs), and Erasmus+ mobility programs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-users text-jnuBlue mr-3 mt-1"></i>
+                            <span>Fostering global learning opportunities and cross-cultural academic engagement</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 pt-6 border-t border-gray-200">
+                        <a href="https://www.jnu.ac.in/ic" target="_blank"
+                            class="inline-flex items-center gap-2 bg-jnuBlue text-white px-6 py-3 rounded-lg hover:bg-jnuLightBlue transition-colors font-semibold">
+                            <i class="fas fa-external-link-alt"></i>
+                            Learn More About JNU's International Collaborations
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#12384f] text-white py-4">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center flex-wrap gap-2 mb-1">
+                <nav class="flex items-center text-xs text-white space-x-0">
+                    <a href="https://www.jnu.ac.in/website-policy" class="hover:underline px-1">Website Policy</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/disclaimer" class="hover:underline px-1">Disclaimer</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/sitemap" class="hover:underline px-1">Sitemap</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/contact" class="hover:underline px-1">Contact Us</a>
+                    <span class="text-white">|</span>
+                    <a href="feedback.html" class="hover:underline px-1">Feedback</a>
+                </nav>
+            </div>
+
+            <div class="text-[12px] text-white leading-tight">
+                <p class="mb-1">&copy; Jawaharlal Nehru University. New Mehrauli Road, New Delhi 110067. All rights
+                    reserved.</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Highcharts Defaults for JNU Theme
+        Highcharts.setOptions({
+            colors: ['#003366', '#C5A059', '#990000', '#005b96'],
+            chart: {
+                style: {
+                    fontFamily: 'Inter, sans-serif'
+                }
+            }
+        });
+
+        // 1. Research Output Growth Chart (UPDATED BAR CHART)
+        // Values approximated from provided image: Books, Articles, Seminars, Awards
+        Highcharts.chart('researchChart3d', {
+            chart: {
+                type: 'bar', // Horizontal bar as per image
+                backgroundColor: 'transparent',
+            },
+            title: { text: null },
+            tooltip: { enabled: false },
+            xAxis: {
+                categories: ['Awards/Honours', 'International Seminars Participated', 'Articles in Journals', 'Books Published'],
+                title: { text: null }
+            },
+            yAxis: {
+                min: 0,
+                title: { text: null },
+                labels: { enabled: false },
+                gridLineWidth: 0
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: { enabled: false },
+                    states: {
+                        hover: {
+                            enabled: false
+                        }
+                    }
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -10,
+                y: 20,
+                floating: true,
+                borderWidth: 1,
+                backgroundColor: '#FFFFFF',
+                shadow: true
+            },
+            credits: { enabled: false },
+            series: [
+                { name: '2024-25', data: [154, 795, 1236, 162], color: '#9467bd' },   // Purple (New Year)
+                { name: '2023-24', data: [110, 950, 1170, 160], color: '#005b96' }, // Blue
+                { name: '2022-23', data: [130, 850, 1110, 170], color: '#ff7f0e' }, // Orange
+                { name: '2021-22', data: [90, 420, 1020, 140], color: '#2ca02c' }, // Green
+                { name: '2020-21', data: [75, 520, 1090, 100], color: '#d62728' }  // Red
+            ]
+        });
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        function toggleSchools() {
+            const hiddenSchools = document.querySelectorAll('.hidden-school');
+            const btn = document.getElementById('viewMoreBtn');
+            const icon = document.getElementById('btnIcon');
+
+            const isHidden = hiddenSchools[0].classList.contains('hidden');
+
+            hiddenSchools.forEach(school => {
+                if (isHidden) {
+                    school.classList.remove('hidden');
+                    school.classList.add('flex');
+                } else {
+                    school.classList.add('hidden');
+                    school.classList.remove('flex');
+                }
+            });
+
+            if (isHidden) {
+                btn.innerHTML = 'Show Less <i class="fas fa-chevron-up ml-1"></i>';
+            } else {
+                btn.innerHTML = 'View All Schools & Centres <i class="fas fa-chevron-down ml-1"></i>';
+            }
+        }
+
+        function toggleReadMore(contentId, btnId) {
+            const content = document.getElementById(contentId);
+            const btn = document.getElementById(btnId);
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                btn.innerHTML = 'Read less <i class="fas fa-chevron-up text-xs"></i>';
+            } else {
+                content.classList.add('hidden');
+                btn.innerHTML = 'Read more <i class="fas fa-chevron-down text-xs"></i>';
+            }
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+
+</html>

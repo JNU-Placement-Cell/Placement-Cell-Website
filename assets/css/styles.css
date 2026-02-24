@@ -1,0 +1,660 @@
+/*
+ * ============================================================
+ * JNU PLACEMENT CELL - UNIFIED STYLESHEET
+ * ============================================================
+ * This file contains all custom styles for the website.
+ * Used together with: output.css (Tailwind), fontawesome.css, google-fonts.css
+ * 
+ * Last Updated: 2026-02-08
+ * ============================================================
+ */
+
+/* =====================================================
+   1. BASE / GENERAL STYLES
+   ===================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar - Light variant */
+.custom-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Custom Scrollbar - Dark variant */
+.custom-scroll-dark::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scroll-dark::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.custom-scroll-dark::-webkit-scrollbar-thumb {
+    background: rgba(0, 51, 102, 0.3);
+    border-radius: 3px;
+}
+
+.custom-scroll-dark::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 51, 102, 0.6);
+}
+
+/* Content body paragraph styles */
+.content-body p {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    text-align: justify;
+}
+
+/* =====================================================
+   2. HERO SECTION STYLES (index.html)
+   ===================================================== */
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 0;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.hero-overlay {
+    background: linear-gradient(to bottom, rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.4));
+}
+
+.hero-pattern {
+    background-color: #003366;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* =====================================================
+   3. TICKER / MARQUEE STYLES
+   ===================================================== */
+
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.ticker-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 30s linear infinite;
+}
+
+.ticker-item {
+    display: inline-block;
+    padding: 0 2rem;
+}
+
+.ticker-wrap:hover .ticker-content {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* =====================================================
+   4. CARD STYLES
+   ===================================================== */
+
+/* Stats Card Hover */
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+/* General Card Hover */
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* =====================================================
+   5. LOGO GRID STYLES (Rankings Section - index.html)
+   ===================================================== */
+
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 260px);
+    gap: 1.25rem;
+    justify-content: center;
+    align-items: start;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.logo-card {
+    width: 260px;
+    border-radius: 0.75rem;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    transition: transform .28s cubic-bezier(.2, .9, .2, 1), box-shadow .28s;
+    will-change: transform;
+}
+
+.logo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.logo-card-img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    padding: 0.5rem;
+}
+
+.logo-accent {
+    height: 5px;
+    width: 80%;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+/* Logo Accent Colors */
+.accent-jnuBlue {
+    background: #e30101;
+}
+
+.accent-gold {
+    background: #040997;
+}
+
+.accent-red {
+    background: #e06d01;
+}
+
+.accent-green {
+    background: #272727;
+}
+
+.accent-indigo {
+    background: #93ae1a;
+}
+
+/* =====================================================
+   6. RECRUITER CAROUSEL STYLES (index.html)
+   ===================================================== */
+
+.recruiter-wrap {
+    overflow: hidden;
+    position: relative;
+}
+
+.recruiter-track {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.recruiter-item {
+    background: #fff;
+    width: 260px;
+    height: 140px;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+    transition: transform .25s ease, box-shadow .25s ease;
+    flex-shrink: 0;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.recruiter-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(2, 6, 23, 0.12);
+}
+
+.recruiter-logo {
+    max-width: 85%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.recruiter-wrap:hover .recruiter-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* =====================================================
+   7. TEAM PAGE STYLES (team.html)
+   ===================================================== */
+
+.team-card {
+    background: #fff;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: transform .28s cubic-bezier(.2, .9, .2, 1), box-shadow .28s;
+    will-change: transform;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    display: block;
+}
+
+.card-media {
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+.team-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.avatar {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    border: 0;
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
+    display: block;
+}
+
+.icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 6px 14px rgba(2, 6, 23, 0.06);
+    transition: transform .22s ease, background .22s, box-shadow .22s;
+    border: 1px solid rgba(2, 6, 23, 0.04);
+}
+
+.icon-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(2, 6, 23, 0.12);
+}
+
+.accent-line {
+    width: 42px;
+    height: 6px;
+    background: linear-gradient(90deg, #003366, #990000);
+    border-radius: 6px;
+    display: inline-block;
+    margin-right: .75rem;
+}
+
+/* Team Toggle UI */
+.team-toggle {
+    display: inline-flex;
+    background: #fff;
+    border-radius: 12px;
+    padding: 4px;
+    box-shadow: 0 6px 20px rgba(2, 6, 23, 0.06);
+    border: 1px solid rgba(2, 6, 23, 0.06);
+}
+
+.team-toggle button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: transparent;
+    border: none;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    transition: all .18s ease;
+    font-size: 14px;
+}
+
+.team-toggle button[aria-pressed="true"] {
+    background: linear-gradient(90deg, #003366, #990000);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.12);
+}
+
+.panels {
+    overflow: hidden;
+    position: relative;
+}
+
+.panels-track {
+    display: flex;
+    width: 200%;
+    transition: transform .45s cubic-bezier(.2, .9, .2, 1);
+}
+
+.panel {
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Administration Section */
+.admin-section {
+    background-color: #1a1a4b;
+    color: white;
+    padding: 3rem 1.5rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 20px !important;
+}
+
+.admin-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.admin-avatar {
+    width: 140px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.admin-info h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+}
+
+.admin-info .dept {
+    font-size: 0.8rem;
+    font-style: italic;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+.admin-info .role {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.email-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.email-icon {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.office-staff {
+    margin-top: 1rem;
+}
+
+.office-staff h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.office-staff .staff-member {
+    margin-bottom: 1rem;
+}
+
+.office-staff .staff-name {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.office-staff .staff-role {
+    font-size: 0.75rem;
+    font-style: italic;
+    opacity: 0.8;
+    text-transform: uppercase;
+}
+
+/* Student Section */
+.student-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.student-item {
+    margin-bottom: 1.25rem;
+}
+
+.student-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.student-email {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    display: block;
+}
+
+.student-list-item {
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+}
+
+.executive-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 2rem;
+}
+
+/* =====================================================
+   8. CHART STYLES (About_Us.html)
+   ===================================================== */
+
+.chart-container {
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+}
+
+/* =====================================================
+   9. ABOUT PAGE SPECIFIC STYLES
+   ===================================================== */
+
+.world-map-bg {
+    background-color: #f8fafc;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/World_map_blank_without_borders.svg/2000px-World_map_blank_without_borders.svg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 1;
+}
+
+/* =====================================================
+   10. LINE CLAMP UTILITY
+   ===================================================== */
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* =====================================================
+   11. RESPONSIVE STYLES
+   ===================================================== */
+
+/* Tablet landscape (max-width: 1024px) */
+@media (max-width: 1024px) {
+
+    .grid.lg\:grid-cols-2,
+    .grid.lg\:grid-cols-3 {
+        grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    }
+}
+
+/* Tablet portrait and below (max-width: 768px) */
+@media (max-width: 768px) {
+    .chart-container {
+        height: 300px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    }
+
+    .hidden.md\:flex {
+        display: none !important;
+    }
+
+    .executive-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet specific (769px - 1023px) */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .max-w-7xl {
+        max-width: 90%;
+    }
+
+    .grid.md\:grid-cols-2.lg\:grid-cols-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+/* Logo grid responsive (max-width: 900px) */
+@media (max-width: 900px) {
+    .logo-grid {
+        grid-template-columns: repeat(2, 260px);
+    }
+
+    .recruiter-item,
+    .logo-card {
+        width: 200px;
+    }
+
+    .recruiter-track {
+        gap: 1.25rem;
+    }
+
+    .grid-md-5 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* Mobile (max-width: 640px) */
+@media (max-width: 640px) {
+    .logo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .logo-card {
+        width: 46vw;
+    }
+
+    .recruiter-item {
+        width: 46vw;
+        height: 120px;
+    }
+
+    .avatar {
+        width: 36vw;
+        height: 44vw;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-size: 90% !important;
+    }
+
+    .text-3xl {
+        font-size: 1.5rem !important;
+    }
+
+    .text-4xl {
+        font-size: 1.75rem !important;
+    }
+}
+
+/* Navigation responsive fixes (max-width: 1100px) */
+@media (max-width: 1100px) {
+    .hidden.md\:flex {
+        display: none !important;
+    }
+
+    .flex.items-center.md\:hidden {
+        display: flex !important;
+    }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .panels-track {
+        transition: none;
+    }
+
+    .ticker-content {
+        animation: none;
+    }
+
+    .hero-slide {
+        transition: none;
+    }
+}

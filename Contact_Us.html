@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | JNU Placement Cell</title>
+    <!-- Local Assets -->
+    <link href="assets/css/output.css" rel="stylesheet">
+    <link href="assets/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/css/google-fonts.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <style>
+        /* Responsive improvements for smooth transitions */
+        @media (max-width: 1024px) {
+
+            /* Tablet landscape - force single column for complex layouts */
+            .grid.lg\:grid-cols-2,
+            .grid.lg\:grid-cols-3 {
+                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Tablet portrait and below - mobile view */
+            /* Ensure all grids become single column */
+            .grid {
+                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+            }
+
+            /* Hide desktop navigation, show mobile */
+            .hidden.md\:flex {
+                display: none !important;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1023px) {
+
+            /* Tablet-specific adjustments */
+            .max-w-7xl {
+                max-width: 90%;
+            }
+
+            /* Force 2-column max for grids on tablets */
+            .grid.md\:grid-cols-2.lg\:grid-cols-3 {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+
+            /* Mobile - ensure everything stacks */
+            h1,
+            h2,
+            h3 {
+                font-size: 90% !important;
+            }
+
+            .text-3xl {
+                font-size: 1.5rem !important;
+            }
+
+            .text-4xl {
+                font-size: 1.75rem !important;
+            }
+        }
+
+        /* Navigation responsive fixes */
+        @media (max-width: 1100px) {
+
+            /* Hide desktop menu earlier to prevent text wrapping/breaking */
+            .hidden.md\:flex {
+                display: none !important;
+            }
+
+            .flex.items-center.md\:hidden {
+                display: flex !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans antialiased text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="flex items-center gap-3">
+                        <div><img src="assets/logos/jnulogo2.png" alt="JNU logo" class="h-12 w-12 object-contain"></div>
+                        <div class="border-l-2 border-gray-300 pl-3">
+                            <h1 class="text-lg font-serif font-bold text-jnuBlue leading-none">Jawaharlal Nehru
+                                university</h1>
+                            <p class="text-sm font-bold text-jnuRed tracking-widest uppercase mt-1">Placement Cell
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-4 px-4">
+                    <a href="index.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">HOME</a>
+                    <a href="About_Us.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">ABOUT
+                        US</a>
+                    <a href="For_Recruiters.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">FOR
+                        RECRUITERS</a>
+                    <a href="students.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">FOR
+                        STUDENTS</a>
+                    <a href="Campus_Life.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">CAMPUS
+                        LIFE</a>
+                    <a href="team.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">OUR
+                        TEAM</a>
+                    <a href="Our_Alumni.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">OUR
+                        ALUMNI</a>
+                    <a href="Contact_Us.html"
+                        class="text-jnuBlue font-bold text-sm uppercase border-b-2 border-jnuRed whitespace-nowrap">CONTACT
+                        US</a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleMobileMenu()"
+                        class="text-gray-600 hover:text-jnuBlue p-2 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu"
+            class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl z-40 left-0">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="index.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">HOME</a>
+                <a href="About_Us.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">ABOUT
+                    US</a>
+                <a href="For_Recruiters.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">FOR
+                    RECRUITERS</a>
+                <a href="students.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">FOR
+                    STUDENTS</a>
+                <a href="Campus_Life.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">CAMPUS
+                    LIFE</a>
+                <a href="team.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">OUR
+                    TEAM</a>
+                <a href="Our_Alumni.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">OUR
+                    ALUMNI</a>
+                <a href="Contact_Us.html" class="block py-2 text-sm font-bold text-jnuBlue">CONTACT US</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+
+        <!-- Header -->
+        <div class="bg-white border-b border-gray-200 pt-8 pb-4">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-4xl font-serif font-bold text-jnuBlue mb-2">Contact Us</h1>
+            </div>
+        </div>
+
+        <!-- Content Grid -->
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <!-- Changed to a 2-column grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+
+                    <!-- Left Column: Stacked Info (Contact Details + How to Reach Us) -->
+                    <div class="space-y-8">
+
+                        <!-- Contact Details Section -->
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-jnuBlue mb-6 border-l-4 border-jnuGold pl-4">
+                                Contact Details</h3>
+                            <div
+                                class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 hover:shadow-md transition-shadow">
+                                <div class="space-y-6">
+                                    <!-- Email -->
+                                    <div class="flex items-start gap-4">
+                                        <div
+                                            class="mt-1 w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-jnuBlue flex-shrink-0">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
+                                                Email</p>
+                                            <a href="mailto:placement@jnu.ac.in"
+                                                class="text-lg font-bold text-jnuBlue hover:text-jnuRed transition-colors">placement@jnu.ac.in</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="w-full border-t border-gray-100"></div>
+
+                                    <!-- Phone -->
+                                    <div class="flex items-start gap-4">
+                                        <div
+                                            class="mt-1 w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-jnuBlue flex-shrink-0">
+                                            <i class="fas fa-phone-alt"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
+                                                Phone</p>
+                                            <a href="tel:011-26704046"
+                                                class="text-lg font-bold text-jnuBlue hover:text-jnuRed transition-colors">011-26704046</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="w-full border-t border-gray-100"></div>
+
+                                    <!-- Address -->
+                                    <div class="flex items-start gap-4">
+                                        <div
+                                            class="mt-1 w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-jnuBlue flex-shrink-0">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
+                                                Address</p>
+                                            <p class="text-gray-700 leading-relaxed">
+                                                Room No. 110, JNU Convention Center,<br>
+                                                Jawaharlal Nehru University,<br>
+                                                New Mehrauli Road,<br>
+                                                New Delhi - 110067
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="w-full border-t border-gray-100"></div>
+
+                                    <!-- Social Media -->
+                                    <div class="flex items-start gap-4">
+                                        <div
+                                            class="mt-1 w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-jnuBlue flex-shrink-0">
+                                            <i class="fas fa-share-alt"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">
+                                                Social Media</p>
+                                            <div class="flex gap-4">
+                                                <a href="https://www.linkedin.com/company/jnupcell/" target="_blank"
+                                                    class="w-10 h-10 rounded-lg bg-jnuBlue text-white flex items-center justify-center hover:bg-jnuRed transition-colors shadow-sm"
+                                                    title="LinkedIn">
+                                                    <i class="fab fa-linkedin-in text-lg"></i>
+                                                </a>
+                                                <a href="https://www.instagram.com/jnupcell" target="_blank"
+                                                    class="w-10 h-10 rounded-lg bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
+                                                    title="Instagram">
+                                                    <i class="fab fa-instagram text-lg"></i>
+                                                </a>
+                                                <a href="https://www.youtube.com/@jnupcell" target="_blank"
+                                                    class="w-10 h-10 rounded-lg bg-red-600 text-white flex items-center justify-center hover:bg-red-700 transition-colors shadow-sm"
+                                                    title="YouTube">
+                                                    <i class="fab fa-youtube text-lg"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- How to Reach Us Section -->
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-jnuBlue mb-6 border-l-4 border-jnuGold pl-4">
+                                How to Reach Us</h3>
+                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 space-y-6">
+
+                                <div>
+                                    <h4 class="text-sm font-bold text-jnuRed uppercase tracking-wide mb-2"><i
+                                            class="fas fa-subway mr-2"></i>Nearest Metro Station</h4>
+                                    <ul class="list-disc list-inside text-gray-600 text-sm space-y-1 ml-1">
+                                        <li>Munirka (Magenta Line)</li>
+                                        <li>R.K. Puram (Magenta Line)</li>
+                                        <li>Vasant Vihar (Magenta Line)</li>
+                                    </ul>
+                                </div>
+
+                                <div class="border-t border-gray-100 pt-4">
+                                    <h4 class="text-sm font-bold text-jnuRed uppercase tracking-wide mb-2"><i
+                                            class="fas fa-plane mr-2"></i>From Airport</h4>
+                                    <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                                        <p class="text-gray-600 text-sm">Via Rao Tula Ram Marg (~8.7 Km from IGI T3)</p>
+                                        <a href="https://www.google.com/maps/dir/Indira+Gandhi+Int'l+Airport,+New+Delhi,+Delhi+110037/JNU+Convention+Center,+Jawaharlal+Nehru+University,+New+Mehrauli+Road,+JNU+Ring+Rd,+Jawaharlal+Nehru+University,+New+Delhi,+Delhi+110067/@28.5484898,77.1075042,8621m/data=!3m2!1e3!5s0x390d1dc355c2b31b:0x8ea1ab7e731b5274!4m15!4m14!1m5!1m1!1s0x390d1b85fc2a2d89:0xbef376182c43ed9d!2m2!1d77.0999623!2d28.5561437!1m5!1m1!1s0x390d1ddb55725eaf:0xdf1d45bdd082aedf!2m2!1d77.1659319!2d28.5383708!3e9!5i1?entry=ttu&g_ep=EgoyMDI2MDIwOS4wIKXMDSoASAFQAw%3D%3D"
+                                            target="_blank"
+                                            class="inline-flex items-center text-xs font-bold text-white bg-jnuBlue px-3 py-1.5 rounded hover:bg-jnuRed transition-colors shadow-sm">
+                                            Get Directions <i class="fas fa-location-arrow ml-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column: Map -->
+                    <div
+                        class="relative h-[500px] lg:h-auto rounded-xl overflow-hidden shadow-md border border-gray-200">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1793.4312130489434!2d77.16576843606477!3d28.538057484691556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1ddb55725eaf%3A0xdf1d45bdd082aedf!2sJNU%20Convention%20Center!5e1!3m2!1sen!2sin!4v1770875786659!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="absolute inset-0 bg-jnuBlue/10 pointer-events-none"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#12384f] text-white py-4">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center flex-wrap gap-2 mb-1">
+                <nav class="flex items-center text-xs text-white space-x-0">
+                    <a href="https://www.jnu.ac.in/website-policy" class="hover:underline px-1">Website Policy</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/disclaimer" class="hover:underline px-1">Disclaimer</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/sitemap" class="hover:underline px-1">Sitemap</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/contact" class="hover:underline px-1">Contact Us</a>
+                    <span class="text-white">|</span>
+                    <a href="feedback.html" class="hover:underline px-1">Feedback</a>
+                </nav>
+            </div>
+
+            <div class="text-[12px] text-white leading-tight">
+                <p class="mb-1">&copy; Jawaharlal Nehru University. New Mehrauli Road, New Delhi 110067. All rights
+                    reserved.</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+
+</html>

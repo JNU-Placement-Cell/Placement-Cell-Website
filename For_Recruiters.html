@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Recruiters | JNU Placement Cell</title>
+    <!-- Local Assets -->
+    <link href="assets/css/output.css" rel="stylesheet">
+    <link href="assets/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/css/google-fonts.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+
+    <style>
+        /* Preserving Custom Hexagon CSS 
+           This logic is too complex for utility classes alone 
+        */
+        :root {
+            /* Hexagon Configuration */
+            --hex-width: 200px;
+            --hex-height: 174px;
+            --hex-gap: 15px;
+
+            /* Mapping CSS vars to Tailwind colors for the hex grid specifically */
+            --hex-blue: #003366;
+            --hex-gold: #C5A059;
+        }
+
+        /* --- HEXAGON GRID CSS --- */
+        .hex-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+            position: relative;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            height: 600px;
+            overflow: visible;
+        }
+
+        .hex-container {
+            position: relative;
+            width: 600px;
+            height: 600px;
+        }
+
+        .hex-wrapper {
+            position: absolute;
+            width: var(--hex-width);
+            height: var(--hex-height);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+            left: 50%;
+            top: 50%;
+            margin-left: calc(var(--hex-width) / -2);
+            margin-top: calc(var(--hex-height) / -2);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hex-wrapper:hover {
+            transform: scale(1.05);
+            z-index: 50;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.15));
+            animation-play-state: paused;
+        }
+
+        .hex-content {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px 25px;
+            font-weight: 700;
+            color: #1f2937;
+            font-family: 'Merriweather', serif;
+            font-size: 0.85rem;
+            line-height: 1.3;
+        }
+
+        /* Gold Border Simulation */
+        .hex-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--hex-gold);
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            z-index: -1;
+        }
+
+        /* Center */
+        .hex-center {
+            z-index: 10;
+            animation: none;
+        }
+
+        .hex-center .hex-content {
+            background: white;
+            color: var(--hex-blue);
+            font-size: 1.1rem;
+            box-shadow: inset 0 0 20px rgba(197, 160, 89, 0.2);
+        }
+
+        .hex-center::before {
+            background: var(--hex-gold);
+        }
+
+        /* Positions */
+        .hex-top {
+            top: calc(50% - var(--hex-height) - var(--hex-gap));
+            animation-delay: 0s;
+        }
+
+        .hex-bottom {
+            top: calc(50% + var(--hex-height) + var(--hex-gap));
+            animation-delay: 3s;
+        }
+
+        .hex-tr {
+            left: calc(50% + (var(--hex-width) * 0.75) + var(--hex-gap));
+            top: calc(50% - (var(--hex-height) / 2) - (var(--hex-gap) / 2));
+            animation-delay: 1s;
+        }
+
+        .hex-br {
+            left: calc(50% + (var(--hex-width) * 0.75) + var(--hex-gap));
+            top: calc(50% + (var(--hex-height) / 2) + (var(--hex-gap) / 2));
+            animation-delay: 2s;
+        }
+
+        .hex-bl {
+            left: calc(50% - (var(--hex-width) * 0.75) - var(--hex-gap));
+            top: calc(50% + (var(--hex-height) / 2) + (var(--hex-gap) / 2));
+            animation-delay: 4s;
+        }
+
+        .hex-tl {
+            left: calc(50% - (var(--hex-width) * 0.75) - var(--hex-gap));
+            top: calc(50% - (var(--hex-height) / 2) - (var(--hex-gap) / 2));
+            animation-delay: 5s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        /* Responsive Hex Grid */
+        @media (max-width: 991px) {
+            .hex-grid {
+                height: auto;
+                padding: 0;
+                margin-top: 1rem;
+            }
+
+            .hex-container {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hex-wrapper {
+                position: relative;
+                top: auto !important;
+                left: auto !important;
+                margin: 0 !important;
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+                transform: none !important;
+                animation: none !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            .hex-content {
+                clip-path: none;
+                border-radius: 8px;
+                padding: 20px;
+                background: white;
+                border: 2px solid var(--hex-gold);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            }
+
+            .hex-wrapper::before {
+                display: none;
+            }
+
+            .hex-center .hex-content {
+                background: var(--hex-blue);
+                color: white;
+                border: none;
+            }
+        }
+
+        /* Responsive improvements for smooth transitions */
+        @media (max-width: 1024px) {
+
+            /* Tablet landscape - force single column for complex layouts */
+            .grid.lg\:grid-cols-2,
+            .grid.lg\:grid-cols-3 {
+                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Tablet portrait and below - mobile view */
+            .chart-container {
+                height: 300px;
+            }
+
+            /* Ensure all grids become single column */
+            .grid {
+                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+            }
+
+            /* Hide desktop navigation, show mobile */
+            .hidden.md\:flex {
+                display: none !important;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1023px) {
+
+            /* Tablet-specific adjustments */
+            .max-w-7xl {
+                max-width: 90%;
+            }
+
+            /* Force 2-column max for school cards on tablets */
+            .grid.md\:grid-cols-2.lg\:grid-cols-3 {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+
+            /* Mobile - ensure everything stacks */
+            h1,
+            h2,
+            h3 {
+                font-size: 90% !important;
+            }
+
+            .text-3xl {
+                font-size: 1.5rem !important;
+            }
+
+            .text-4xl {
+                font-size: 1.75rem !important;
+            }
+        }
+
+        /* Navigation responsive fixes */
+        @media (max-width: 1100px) {
+
+            /* Hide desktop menu earlier to prevent text wrapping/breaking */
+            .hidden.md\:flex {
+                display: none !important;
+            }
+
+            .flex.items-center.md\:hidden {
+                display: flex !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans antialiased text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="flex items-center gap-3">
+                        <div><img src="assets/logos/jnulogo2.png" alt="JNU logo" class="h-12 w-12 object-contain"></div>
+                        <div class="border-l-2 border-gray-300 pl-3">
+                            <h1 class="text-lg font-serif font-bold text-jnuBlue leading-none">Jawaharlal Nehru
+                                university</h1>
+                            <p class="text-sm font-bold text-jnuRed tracking-widest uppercase mt-1">Placement Cell
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-4 px-4">
+                    <a href="index.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">HOME</a>
+                    <a href="About_Us.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">ABOUT
+                        US</a>
+                    <a href="For_Recruiters.html"
+                        class="text-jnuBlue font-bold text-sm uppercase border-b-2 border-jnuRed whitespace-nowrap">FOR
+                        RECRUITERS</a>
+                    <a href="students.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">FOR
+                        STUDENTS</a>
+                    <a href="Campus_Life.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">CAMPUS
+                        LIFE</a>
+                    <a href="team.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">OUR
+                        TEAM</a>
+                    <a href="Our_Alumni.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">OUR
+                        ALUMNI</a>
+                    <a href="Contact_Us.html"
+                        class="text-gray-600 hover:text-jnuBlue font-medium text-sm uppercase whitespace-nowrap">CONTACT
+                        US</a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleMobileMenu()"
+                        class="text-gray-600 hover:text-jnuBlue p-2 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu"
+            class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl z-40 left-0">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="index.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">HOME</a>
+                <a href="About_Us.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">ABOUT
+                    US</a>
+                <a href="For_Recruiters.html" class="block py-2 text-sm font-bold text-jnuBlue">FOR RECRUITERS</a>
+                <a href="students.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">FOR
+                    STUDENTS</a>
+                <a href="Campus_Life.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">CAMPUS
+                    LIFE</a>
+                <a href="team.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">OUR
+                    TEAM</a>
+                <a href="Our_Alumni.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">OUR
+                    ALUMNI</a>
+                <a href="Contact_Us.html"
+                    class="block py-2 text-sm font-semibold text-gray-600 hover:text-jnuBlue border-b border-gray-100">CONTACT
+                    US</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+
+        <!-- Header (Standardized) -->
+        <div class="bg-white border-b border-gray-200 pt-8 pb-4">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-3xl md:text-4xl font-serif font-bold text-jnuBlue mb-2">For Recruiters</h1>
+            </div>
+        </div>
+
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+
+                    <!-- Left Column (Content) -->
+                    <div class="lg:col-span-7 space-y-12">
+
+                        <!-- Why JNU Section -->
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-jnuBlue mb-6 border-l-4 border-jnuGold pl-4">
+                                Why JNU?
+                            </h3>
+                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+                                <p class="text-gray-600 leading-relaxed mb-4 text-justify">
+                                    Henry Giroux, a pioneering name in Critical Pedagogy and Culture studies,
+                                    had famously observed that universities should be about more than developing
+                                    work skills. They must also be about producing civic-minded and critically
+                                    engaged citizens - citizens who can engage in debate, dialogue and bear witness
+                                    to a different and critical sense of remembering, agency, ethics and collective
+                                    resistance.
+                                </p>
+                                <p class="text-gray-600 leading-relaxed mb-4 text-justify">
+                                    JNU reflects precisely this understanding of a university. Amid the undulating
+                                    ridges of the Aravalli Ranges,
+                                    Jawaharlal Nehru University is a locus amoenus geographically as well as
+                                    academically, spread across an area of
+                                    more than 1000 acres. It aesthetically comprises of 13 schools that have 38
+                                    centres, 8 special centres,
+                                    the state of the art labs including language labs that are well-equipped with
+                                    the latest technology,
+                                    state of the art library, seminar halls and highly advanced auditoriums.
+                                </p>
+                                <p class="text-gray-600 leading-relaxed text-justify">
+                                    Stemming from the roots of historical ideals and modern civilization, JNU is a
+                                    true amalgamation
+                                    of critical thinking, interdisciplinary dialogue, and exemplary research
+                                    institution that makes it
+                                    incredibly successful in producing top class personalities in a diverse array of
+                                    fields, be it
+                                    bureaucrats, scientists, engineers, managers, professionals or public figures.
+                                    Since its very
+                                    inception, JNU has been a hallmark for providing quality education in all the
+                                    majoritarian streams
+                                    of knowledge.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Pillars of Strength Section -->
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-jnuBlue mb-6 border-l-4 border-jnuGold pl-4">
+                                Pillars of Strength
+                            </h3>
+
+                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 mb-8">
+                                <p class="text-gray-600 leading-relaxed text-justify">
+                                    JNU is a premier academic institution in the country that stands out for its
+                                    commitment to creating a holistic learning environment for students coming from
+                                    various parts of the country and all over the world. Among a multitude of assets
+                                    JNU boasts of, expert faculties who are distinguished in their respective
+                                    fields, an exemplary infrastructure and an environment that is conducive to
+                                    creating critical minds makes JNU stand out as a premier institution. In JNU,
+                                    students are not only engaged in constant intellectual stimulation through
+                                    classroom lectures and inter disciplinary research, but they are also taught to
+                                    be committed towards community services. JNU campus is renowned for its greenery
+                                    and openness (both literally and metaphorically) apart from its most striking
+                                    feature of being DIVYANG friendly and gender just. The overall female students
+                                    are outnumbered the male students.
+                                </p>
+                            </div>
+
+                            <!-- Hex Grid -->
+                            <div class="hex-grid">
+                                <div class="hex-container">
+                                    <!-- Center -->
+                                    <div class="hex-wrapper hex-center">
+                                        <div class="hex-content">Pillars of<br>Strength</div>
+                                    </div>
+                                    <!-- Top -->
+                                    <div class="hex-wrapper hex-top">
+                                        <div class="hex-content">Community Service</div>
+                                    </div>
+                                    <!-- Top Right -->
+                                    <div class="hex-wrapper hex-tr">
+                                        <div class="hex-content">Inter-Disciplinary<br>Research</div>
+                                    </div>
+                                    <!-- Bottom Right -->
+                                    <div class="hex-wrapper hex-br">
+                                        <div class="hex-content">Best of Critical<br>Thinking</div>
+                                    </div>
+                                    <!-- Bottom -->
+                                    <div class="hex-wrapper hex-bottom">
+                                        <div class="hex-content">Gender-Just & PH<br>Friendly Campus</div>
+                                    </div>
+                                    <!-- Bottom Left -->
+                                    <div class="hex-wrapper hex-bl">
+                                        <div class="hex-content">World Class<br>Infrastructure</div>
+                                    </div>
+                                    <!-- Top Left -->
+                                    <div class="hex-wrapper hex-tl">
+                                        <div class="hex-content">Exemplary Faculty</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column (Sidebar) -->
+                    <div class="lg:col-span-5">
+                        <div class="flex flex-col gap-6 sticky top-24">
+
+                            <!-- CTA Box -->
+                            <div class="bg-jnuBlue text-white rounded-xl shadow-lg p-8 text-center">
+                                <h4 class="font-serif font-bold text-xl mb-3">Ready to Recruit?</h4>
+                                <p class="text-sm text-blue-100 mb-6">Register your organization today by filling out
+                                    the Job Notification Form.</p>
+
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnB4FyvHhbMXB7SRu3eWO38kAWDJO7qZTHy3h_kRJ6kCYvOA/viewform"
+                                    class="block w-full bg-white text-jnuBlue font-bold py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors mb-4 shadow-sm">
+                                    <i class="fas fa-file-signature mr-2"></i> Fill JNF Form
+                                </a>
+
+                                <a href="PlacementPolicy_ComingSoon.html"
+                                    class="block w-full bg-transparent border border-white text-white font-medium py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">
+                                    <i class="fas fa-download mr-2"></i> Download Placement Policy
+                                </a>
+                            </div>
+
+                            <!-- Placement Procedure -->
+                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+                                <h4
+                                    class="text-xl font-serif font-bold text-jnuBlue mb-6 pb-4 border-b border-gray-100">
+                                    Placement Procedure
+                                </h4>
+                                <div class="flex flex-col gap-6">
+
+                                    <!-- Step 1 -->
+                                    <div class="flex gap-4">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-jnuBlue text-white flex items-center justify-center font-bold flex-shrink-0 text-sm shadow-sm">
+                                            1</div>
+                                        <div>
+                                            <p class="text-sm text-gray-600 mb-1 text-justify">The Placement Cell shall
+                                                send invitations to recruiting organizations for campus
+                                                internship and placement processes. Interested organizations may also
+                                                send us
+                                                an email at
+                                                <a href="mailto:placement@jnu.ac.in"
+                                                    class="font-bold text-jnuRed hover:underline">placement@jnu.ac.in</a>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Step 2 -->
+                                    <div class="flex gap-4">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-jnuBlue text-white flex items-center justify-center font-bold flex-shrink-0 text-sm shadow-sm">
+                                            2</div>
+                                        <div>
+                                            <p class="text-sm text-gray-600 text-justify">Organizations may register
+                                                with us by filling out <a
+                                                    href="https://docs.google.com/forms/d/e/1FAIpQLSdpqJyOyfvLZ-lsvrVwrtKOSWTGWTJ7pjT03zsNbCWu7cfg_A/viewform"
+                                                    class="font-bold text-jnuBlue hover:text-jnuRed transition-colors">Job
+                                                    Notification Form (JNF) </a> for internships as well as placements
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Step 3 -->
+                                    <div class="flex gap-4">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-jnuBlue text-white flex items-center justify-center font-bold flex-shrink-0 text-sm shadow-sm">
+                                            3</div>
+                                        <div>
+                                            <p class="text-sm text-gray-600 text-justify">Once the NF is filled,
+                                                organizations are contacted for further processes.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Step 4 -->
+                                    <div class="flex gap-4">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-jnuBlue text-white flex items-center justify-center font-bold flex-shrink-0 text-sm shadow-sm">
+                                            4</div>
+                                        <div>
+                                            <p class="text-sm text-gray-600 text-justify">Organizations may conduct
+                                                pre-processes and for which they
+                                                can request with relevant details.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Step 5 -->
+                                    <div class="flex gap-4">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-jnuBlue text-white flex items-center justify-center font-bold flex-shrink-0 text-sm shadow-sm">
+                                            5</div>
+                                        <div>
+                                            <p class="text-sm text-gray-600 text-justify">After selection, the company
+                                                will announce
+                                                the names of the selected candidates at the end of the process.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Note Alert -->
+                                    <div class="bg-yellow-50 border border-yellow-100 rounded-lg p-4 mt-2">
+                                        <div class="flex gap-3 text-sm text-yellow-800">
+                                            <i class="fas fa-info-circle mt-0.5"></i>
+                                            <div>
+                                                <strong>Note:</strong> Interested Companies/Organizations can conduct a
+                                                Pre-Placement-Talk in the campus after prior permission.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#12384f] text-white py-4">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center flex-wrap gap-2 mb-1">
+                <nav class="flex items-center text-xs text-white space-x-0">
+                    <a href="https://www.jnu.ac.in/website-policy" class="hover:underline px-1">Website Policy</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/disclaimer" class="hover:underline px-1">Disclaimer</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/sitemap" class="hover:underline px-1">Sitemap</a>
+                    <span class="text-white">|</span>
+                    <a href="https://www.jnu.ac.in/contact" class="hover:underline px-1">Contact Us</a>
+                    <span class="text-white">|</span>
+                    <a href="feedback.html" class="hover:underline px-1">Feedback</a>
+                </nav>
+            </div>
+
+            <div class="text-[12px] text-white leading-tight">
+                <p class="mb-1">&copy; Jawaharlal Nehru University. New Mehrauli Road, New Delhi 110067. All rights
+                    reserved.</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+
+</html>
